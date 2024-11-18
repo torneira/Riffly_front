@@ -1,0 +1,20 @@
+{
+  "name": "riffly_front",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.21.1",
+    "react": "^18.3.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}
