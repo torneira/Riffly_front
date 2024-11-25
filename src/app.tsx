@@ -1,71 +1,33 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
 import './App.css'
-type ProdutoType = {
-  id:number,
-  nome:string,
-  descricao:string,
-  preco:string,
-  imagem:string 
-}
-type UsuarioType = {
-  id:number,
-  nome:string,
-  email:string,
-  created_at:string,
-  updated_at:string 
-}
+
 function App() {
-  const [produtos, setProdutos] = useState<ProdutoType[]> ([])
-  const [usuarios, setUsuarios] = useState<UsuarioType[]> ([])
+  const [count, setCount] = useState(0)
 
-//useEffect(oque fazer e quando fazer)
-  useEffect(()=>{
-    fetch("http://localhost:8000/produtos")
-    .then(resposta=>resposta.json())
-    .then(dados=>setProdutos(dados))
-  },[])
-  useEffect(()=>{
-    fetch("https://one022b-marketplace-6ac4. onrender.com/usuarios")
-    .then(resposta=>resposta.json())
-    .then(dados=>setUsuarios(dados))
-  },[])
-
-  
   return (
     <>
-    <div className='container-produtos'>
-      {
-        produtos.map(prod=>{
-          return(
-            <div key={prod.id} className='produto-item'>
-              <h1>
-                {prod.nome}
-              </h1>
-              <p>{prod.imagem}</p>
-              <p>{prod.preco}</p>
-              <p>{prod.descricao}</p>
-            </div>
-          )
-        })
-      }
-       </div>
-       <div className='container-usuarios'>
-      {
-        usuarios.map(prod=>{
-          return(
-            <div key={prod.id} className='usuario-item'>
-              <h1>
-                {prod.nome}
-              </h1>
-              <p>{prod.email}</p>
-              <p>{prod.created_at}</p>
-              <p>{prod.updated_at}</p>
-            </div>
-          )
-        })
-      }
-       </div>
-       
+      <div>
+        <a href="https://vite.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.tsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
     </>
   )
 }
