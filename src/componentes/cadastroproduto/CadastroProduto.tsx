@@ -1,6 +1,8 @@
 import { FormEvent, useState, ChangeEvent } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function CadastroProduto(){
+    const navigate = useNavigate();
     const [id,setId] = useState("")
     const [descricao,setDescricao] = useState("")
     const [nome,setNome] = useState("")
@@ -10,9 +12,28 @@ export default function CadastroProduto(){
     function handleForm(event:FormEvent){
         event.preventDefault();
         console.log("Tentei cadastrar produtos");
-        //Pegar os valores dos campos de input e colocar em um objeto do tipo produto
-        //Devo cadastrar no banco utilizando o BackEnd
-        //FETCH   - > PRODUTO
+        const produto = {
+            id: id,
+            nome: nome,
+            descricao: descricao,
+            preco: preco,
+            imagem: imagem
+        }
+        fetch("http://localhost:8000/produtos",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(produto)
+        }).then(response => {
+            if(response.status === 200){
+                alert("Produto cadastrado com sucesso")
+                navigate("/")
+            }
+            else{
+                alert("Erro ao cadastrar produto")
+            }
+        })
     }
     function handleId(event:ChangeEvent<HTMLInputElement>){
         setId(event.target.value)
