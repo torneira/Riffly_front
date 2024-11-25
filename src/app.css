@@ -40,3 +40,81 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Estilo para o container de produtos */
+.container-produtos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Estilo para cada item de produto */
+.produto-item {
+  background-color: #686868;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 250px;
+  text-align: center;
+}
+
+.produto-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.produto-item h1 {
+  margin-top: 20px;
+  font-size: 1.5em;
+  color: #ffffff;
+}
+
+.produto-item p {
+  margin-top: 20px;
+  font-size: 1em;
+  color: #ffffff;
+}
+
+/* Estilo para o container de usuários */
+.container-usuarios {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Estilo para cada item de usuário */
+.usuario-item {
+  background-color: #686868;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  max-width: 250px;
+  text-align: center;
+}
+
+.usuario-item h1 {
+  margin-top: 20px;
+  font-size: 1.5em;
+  color: #ffffff;
+}
+
+.usuario-item p {
+  margin-top: 20px;
+  font-size: 1em;
+  color: #ffffff;
+}
+
+.titulo{
+  margin-top: 40px;
+  text-align: center;
+  font-size: 50px;
+  font-family: "Teko", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: rgb(152, 37, 156)
+}

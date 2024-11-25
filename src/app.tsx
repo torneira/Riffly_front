@@ -1,33 +1,72 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect, useState } from 'react'
 import './App.css'
 
+type ProdutoType = {
+  id:number,
+  nome:string,
+  descricao:string,
+  preco:string,
+  imagem:string
+}
+type UsuarioType = {
+  id:number,
+  name:string,
+  email:string,
+  created_at:string,
+  update_at:string 
+}
 function App() {
-  const [count, setCount] = useState(0)
+  const [produtos, setProdutos] = useState<ProdutoType[]> ([])
+  const [usuarios, setUsuarios] = useState<UsuarioType[]> ([])
 
+//useEffect(oque fazer e quando fazer)
+  useEffect(()=>{
+    fetch("https://one022b-marketplace-vxxx.onrender.com/produtos")
+    .then(resposta=>resposta.json())
+    .then(dados=>setProdutos(dados))
+  },[])
+  useEffect(()=>{
+    fetch("https://one022b-marketplace-vxxx.onrender.com/usuarios")
+    .then(resposta=>resposta.json())
+    .then(dados=>setUsuarios(dados))
+  },[])
+
+  
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <h2 className="titulo">Produtos</h2>
+    <div className='container-produtos'>
+      {
+        produtos.map(prod=>{
+          return(
+            <div key={prod.id} className='produto-item'>
+              <h1>
+                {prod.nome}
+              </h1>
+              <img src={prod.imagem} alt='Imagem do produto'/>
+              <p>{prod.preco}</p>
+              <p>{prod.descricao}</p>
+            </div>
+          )
+        })
+      }
+       </div>
+       <h2 className="titulo">Usuários</h2>
+       <div className='container-usuarios'>
+      {
+        usuarios.map(user=>{
+          return(
+            <div key={user.id} className='usuario-item'>
+              <h1>{user.name}</h1>
+              <p>{user.email}</p>
+              <p>{user.created_at}</p>
+              <p>{user.update_at}</p>
+            </div>
+          )
+        })
+      }
+       </div>
+       
     </>
   )
 }
