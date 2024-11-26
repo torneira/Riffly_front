@@ -28,7 +28,7 @@ type album ={
   capa_album: string,
   ouvintes_album: number
 }
-const App = () => {
+const App =0 () => {
   const [musicas, setMusicas] = useState<musicas[]>([])
   const [usuarios, setUsuarios] = useState<usuarios[]>([])
   const [album, setAlbum] = useState<album[]>([])
