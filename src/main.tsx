@@ -14,7 +14,7 @@ import CadastroProduto from './componentes/cadastroproduto/CadastroProduto.tsx';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <App/>,
   },
   {
     path: "/cadastro-produto",

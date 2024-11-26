@@ -1,13 +1,11 @@
 import { useEffect,useState } from "react";
-import {setMusicas,setUsuarios}from './actions';
 import './App.css'
 type usuarios ={
   id: number,
-  nome: string,
-  apellido: string,
-  email: string,
-  password: string,
-  foto:string
+  nome_usuario: string,
+  email_usuario: string,
+  senha_usuario: string,
+  foto_usuario:string
 }
 type musicas ={
   id: number,
@@ -28,42 +26,37 @@ type album ={
   capa_album: string,
   ouvintes_album: number
 }
-const App = () => {
-  const [musicas, setMusicas] = useState<musicas[]>([])
+
+function App() {
   const [usuarios, setUsuarios] = useState<usuarios[]>([])
+  const [musicas, setMusicas] = useState<musicas[]>([])
   const [album, setAlbum] = useState<album[]>([])
-  const [nome, setNome] = useState<string>()
-  const [apellido, setApellido] = useState<string>()
-  const [email, setEmail] = useState<string>()
-  const [password, setPassword] = useState<string>()
-}
+  useEffect(()=>{
+    fetch("https://one022b-marketplace-cegf.onrender.com/produtos")
+    .then(resposta=>resposta.json())
+    .then(dados=>setUsuarios(dados))
+  },[])
+
+
 useEffect(()=>{
   fetch("http://localhost:8000/musicas")
   .then(response => response.json())
-  .then(data => setMusicas(data))
+  .then(dados => setMusicas(dados))
 },[])
 useEffect(()=>{
   fetch("link do render ")
   .then(response => response.json())
-  .then(data => setUsuarios(data))
+  .then(dados => setUsuarios(dados))
 })
-
 
 
 /*Listagem de album para um app de musica*/
 useEffect(()=>{
   fetch("http://localhost:8000/album")
   .then(response => response.json())
-  .then(data => setAlbum(data))
+  .then(dados => setAlbum(dados))
   },[])
-  return (
-    <div className="App">
-      <header className="App-header">
-      </header>
-    </div>
-  )
+}
 
 
-
-
-
+export default App
