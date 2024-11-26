@@ -43,12 +43,6 @@ useEffect(()=>{
   .then(response => response.json())
   .then(dados => setMusicas(dados))
 },[])
-useEffect(()=>{
-  fetch("link do render ")
-  .then(response => response.json())
-  .then(dados => setUsuarios(dados))
-})
-
 
 /*Listagem de album para um app de musica*/
 useEffect(()=>{
@@ -57,8 +51,19 @@ useEffect(()=>{
   .then(dados => setAlbum(dados))
   },[])
   return(
-    <>
-    </>
+    <div className="container-usuario">
+       {usuarios.map(usu=>{
+      return(
+        <div  key={usu.id} className='usuarios'>
+          <h1>{usu.nome_usuario}</h1>
+          <p>{usu.foto_usuario}</p>
+          <p></p>
+          <img src='{usu.foto_usuario}'/>
+        </div>
+      )
+    })}
+    </div>
+    
   )
 }
 
