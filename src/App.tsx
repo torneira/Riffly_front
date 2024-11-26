@@ -56,6 +56,10 @@ useEffect(()=>{
   .then(response => response.json())
   .then(dados => setAlbum(dados))
   },[])
+  return(
+    <>
+    </>
+  )
 }
 
 
