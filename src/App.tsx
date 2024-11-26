@@ -32,7 +32,7 @@ function App() {
   const [musicas, setMusicas] = useState<musicas[]>([])
   const [album, setAlbum] = useState<album[]>([])
   useEffect(()=>{
-    fetch("https://one022b-marketplace-cegf.onrender.com/produtos")
+    fetch("http://localhost:8000/usuarios")
     .then(resposta=>resposta.json())
     .then(dados=>setUsuarios(dados))
   },[])
