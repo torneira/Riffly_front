@@ -26,11 +26,11 @@ type album ={
   capa_album: string,
   ouvintes_album: number
 }
-
-function App() {
-  const [usuarios, setUsuarios] = useState<usuarios[]>([])
+const App = () => {
   const [musicas, setMusicas] = useState<musicas[]>([])
+  const [usuarios, setUsuarios] = useState<usuarios[]>([])
   const [album, setAlbum] = useState<album[]>([])
+  
   useEffect(()=>{
     fetch("http://localhost:5173/usuarios")
     .then(resposta=>resposta.json())

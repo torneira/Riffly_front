@@ -7,7 +7,7 @@ export default function CadastroUsuario(){
     const [nome_usuario,setNome] = useState("")
     const [email_usuario,setEmail] = useState("")
     const [senha_usuario,setSenha] = useState("")
-    const [imagem,setImagem] = useState("")
+    const [foto_usuario,setFoto] = useState("")
 
     function handleForm(event:FormEvent){
         event.preventDefault();
@@ -17,9 +17,9 @@ export default function CadastroUsuario(){
             nome_usuario: nome_usuario,
             email_usuario: email_usuario,
             senha_usuario: senha_usuario,
-            imagem: imagem
+            foto_usuario: foto_usuario
         }
-        fetch("http://localhost:8000/produtos",{
+        fetch("http://localhost:8000/usuarios",{
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -47,8 +47,8 @@ export default function CadastroUsuario(){
     function handleEmail(event:ChangeEvent<HTMLInputElement>){
         setEmail(event.target.value)
     }
-    function handleImagem(event:ChangeEvent<HTMLInputElement>){
-        setImagem(event.target.value)
+    function handleFoto(event:ChangeEvent<HTMLInputElement>){
+        setFoto(event.target.value)
     }
 
     return(
@@ -56,24 +56,24 @@ export default function CadastroUsuario(){
             <h1>Tela Cadastro de Usuarios</h1>
             <form onSubmit={handleForm}>
                 <div>
-                    <label htmlFor="id">id</label>
+                    <label htmlFor="id">Id</label>
                     <input type="text" name="id" onChange={handleId} />
                 </div>
                 <div>
-                    <label htmlFor="nome">nome</label>
+                    <label htmlFor="nome">Nome</label>
                     <input type="text" name="nome" onChange={handleNome} />
                 </div>
                 <div>
-                    <label htmlFor="descricao">descricao</label>
-                    <input type="text" name="descricao" onChange={handleEmail} />
+                    <label htmlFor="senha">Senha</label>
+                    <input type="text" name="senha" onChange={handleSenha} />
                 </div>
                 <div>
-                    <label htmlFor="preco">preço</label>
-                    <input type="text" name="preco" onChange={handleSenha} />
+                    <label htmlFor="email">Email</label>
+                    <input type="text" name="email" onChange={handleEmail} />
                 </div>
                 <div>
-                    <label htmlFor="imagem">imagem</label>
-                    <input type="text" name="imagem" onChange={handleImagem}/>
+                    <label htmlFor="foto">Foto</label>
+                    <input type="text" name="foto" onChange={handleFoto}/>
                 </div>
                 <div>
                     <input type="submit" value="Cadastrar"/>
