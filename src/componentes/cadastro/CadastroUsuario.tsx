@@ -1,22 +1,22 @@
 import { FormEvent, useState, ChangeEvent } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function CadastroProduto(){
+export default function CadastroUsuario(){
     const navigate = useNavigate();
     const [id,setId] = useState("")
-    const [descricao,setDescricao] = useState("")
-    const [nome,setNome] = useState("")
-    const [preco,setPreco] = useState("")
+    const [nome_usuario,setNome] = useState("")
+    const [email_usuario,setEmail] = useState("")
+    const [senha_usuario,setSenha] = useState("")
     const [imagem,setImagem] = useState("")
 
     function handleForm(event:FormEvent){
         event.preventDefault();
-        console.log("Tentei cadastrar produtos");
-        const produto = {
+        console.log("Tentei cadastrar usuarios");
+        const usuario = {
             id: id,
-            nome: nome,
-            descricao: descricao,
-            preco: preco,
+            nome_usuario: nome_usuario,
+            email_usuario: email_usuario,
+            senha_usuario: senha_usuario,
             imagem: imagem
         }
         fetch("http://localhost:8000/produtos",{
@@ -24,28 +24,28 @@ export default function CadastroProduto(){
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(produto)
+            body: JSON.stringify(usuario)
         }).then(response => {
             if(response.status === 200){
-                alert("Produto cadastrado com sucesso")
+                alert("Usuario cadastrado com sucesso")
                 navigate("/")
             }
             else{
-                alert("Erro ao cadastrar produto")
+                alert("Erro ao cadastrar usuario")
             }
         })
     }
     function handleId(event:ChangeEvent<HTMLInputElement>){
         setId(event.target.value)
     }
-    function handleDescricao(event:ChangeEvent<HTMLInputElement>){
-        setDescricao(event.target.value)
-    }
-    function handlePreco(event:ChangeEvent<HTMLInputElement>){
-        setPreco(event.target.value)
-    }
     function handleNome(event:ChangeEvent<HTMLInputElement>){
         setNome(event.target.value)
+    }
+    function handleSenha(event:ChangeEvent<HTMLInputElement>){
+        setSenha(event.target.value)
+    }
+    function handleEmail(event:ChangeEvent<HTMLInputElement>){
+        setEmail(event.target.value)
     }
     function handleImagem(event:ChangeEvent<HTMLInputElement>){
         setImagem(event.target.value)
@@ -53,7 +53,7 @@ export default function CadastroProduto(){
 
     return(
         <>
-            <h1>Tela Cadastro Produtos</h1>
+            <h1>Tela Cadastro de Usuarios</h1>
             <form onSubmit={handleForm}>
                 <div>
                     <label htmlFor="id">id</label>
@@ -65,11 +65,11 @@ export default function CadastroProduto(){
                 </div>
                 <div>
                     <label htmlFor="descricao">descricao</label>
-                    <input type="text" name="descricao" onChange={handleDescricao} />
+                    <input type="text" name="descricao" onChange={handleEmail} />
                 </div>
                 <div>
                     <label htmlFor="preco">preço</label>
-                    <input type="text" name="preco" onChange={handlePreco} />
+                    <input type="text" name="preco" onChange={handleSenha} />
                 </div>
                 <div>
                     <label htmlFor="imagem">imagem</label>
