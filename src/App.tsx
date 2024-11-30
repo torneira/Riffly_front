@@ -32,21 +32,21 @@ const App = () => {
   const [album, setAlbum] = useState<album[]>([])
   
   useEffect(()=>{
-    fetch("http://localhost:5173/usuarios")
+    fetch("https://riffly-back.onrender.com/usuarios")
     .then(resposta=>resposta.json())
     .then(dados=>setUsuarios(dados))
   },[])
 
 
 useEffect(()=>{
-  fetch("http://localhost:5173/musicas")
+  fetch("https://riffly-back.onrender.com/musicas")
   .then(response => response.json())
   .then(dados => setMusicas(dados))
 },[])
 
 /*Listagem de album para um app de musica*/
 useEffect(()=>{
-  fetch("http://localhost:5173/album")
+  fetch("https://riffly-back.onrender.com/album")
   .then(response => response.json())
   .then(dados => setAlbum(dados))
   },[])
