@@ -26,8 +26,8 @@ type album ={
   capa_album: string,
   ouvintes_album: number
 }
-
-function App() {
+const App = () => {
+  const [musicas, setMusicas] = useState<musicas[]>([])
   const [usuarios, setUsuarios] = useState<usuarios[]>([])
   const [musicas, setMusicas] = useState<musicas[]>([])
   const [album, setAlbum] = useState<album[]>([])
@@ -40,7 +40,7 @@ function App() {
 
 useEffect(()=>{
   fetch("http://localhost:8000/musicas")
-  .then(response => response.json())
+  .then(response => response.json())*
   .then(dados => setMusicas(dados))
 },[])
 useEffect(()=>{
