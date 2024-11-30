@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     element: <App/>,
   },
   {
-    path: "/cadastro-produto",
+    path: "/usuarios",
     element: <CadastroUsuario/>,
   },
 ]);

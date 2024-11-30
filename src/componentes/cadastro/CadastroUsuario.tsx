@@ -19,7 +19,7 @@ export default function CadastroUsuario(){
             senha_usuario: senha_usuario,
             foto_usuario: foto_usuario
         }
-        fetch("http://localhost:8000/usuario",{
+        fetch("http://localhost:8000/usuarios",{
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
