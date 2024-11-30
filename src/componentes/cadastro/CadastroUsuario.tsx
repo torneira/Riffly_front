@@ -11,8 +11,8 @@ export default function CadastroUsuario(){
 
     function handleForm(event:FormEvent){
         event.preventDefault();
-        console.log("Tentei cadastrar produtos");
-        const produto = {
+        console.log("Tentei cadastrar usuarios");
+        const usuario = {
             id: id,
             nome_usuario: nome_usuario,
             email_usuario: email_usuario,
@@ -24,14 +24,14 @@ export default function CadastroUsuario(){
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(produto)
+            body: JSON.stringify(usuario)
         }).then(response => {
             if(response.status === 200){
-                alert("Produto cadastrado com sucesso")
+                alert("Usuario cadastrado com sucesso")
                 navigate("/")
             }
             else{
-                alert("Erro ao cadastrar produto")
+                alert("Erro ao cadastrar usuario")
             }
         })
     }
@@ -53,7 +53,7 @@ export default function CadastroUsuario(){
 
     return(
         <>
-            <h1>Tela Cadastro Produtos</h1>
+            <h1>Tela Cadastro de Usuarios</h1>
             <form onSubmit={handleForm}>
                 <div>
                     <label htmlFor="id">id</label>
