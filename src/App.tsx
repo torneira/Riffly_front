@@ -57,9 +57,8 @@ useEffect(()=>{
       return(
         <div  key={usu.id} className='usuarios'>
           <h1>{usu.nome_usuario}</h1>
-          <p>{usu.foto_usuario}</p>
+          <img src={usu.foto_usuario}/>
           <p>{usu.senha_usuario}</p>
-          <img src='{usu.foto_usuario}'/>
         </div>
       )
     })}
@@ -73,7 +72,7 @@ useEffect(()=>{
           <p>{mus.cantor_musica}</p>
           <p>{mus.genero_musica}</p>
           <p>{mus.letra_musica}</p>
-          <p>{mus.capa_musica}</p>
+          <img src={mus.capa_musica}/>
           <p>{mus.lancamento_musica}</p>
           <p>{mus.ouvintes_musica}</p>
         </div>
@@ -90,7 +89,7 @@ useEffect(()=>{
           <p>{alb.quant_musicas_album}</p>
           <p>{alb.lancamento_album}</p>
           <p>{alb.ouvintes_album}</p>
-         <img src='{alb.capa_album}'></img>
+         <img src={alb.capa_album}/>
          
         </div>
       )
