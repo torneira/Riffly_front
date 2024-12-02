@@ -6,22 +6,24 @@ export default function CadastroAlbum(){
     const [id,setId] = useState("")
     const [nome_album,setNome] = useState("")
     const [cantor_album,setCantor] = useState("")
-    const [quant_musicas_album,setQuant] = useState("")
+    const [quant_musicas_album,setQntMsic] = useState("")
     const [lancamento_album,setLancamento] = useState("")
     const [capa_album,setCapa] = useState("")
+    const [ouvintes_album,setOuvintes] = useState("")
 
     function handleForm(event:FormEvent){
         event.preventDefault();
-        console.log("Tentei cadastrar album");
+        console.log("Tentei cadastrar Musicas");
         const album = {
             id: id,
             nome_album: nome_album,
             cantor_album: cantor_album,
             quant_musicas_album: quant_musicas_album,
             lancamento_album: lancamento_album,
-            capa_album:capa_album
+            capa_album : capa_album,
+            ouvintes_album: ouvintes_album
         }
-        fetch("https://riffly-back.onrender.com/album",{
+        fetch("https://riffly-front.vercel.app/album",{
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -29,11 +31,11 @@ export default function CadastroAlbum(){
             body: JSON.stringify(album)
         }).then(response => {
             if(response.status === 200){
-                alert("Album cadastrado com sucesso")
+                alert("Álbum cadastrada com sucesso")
                 navigate("/")
             }
             else{
-                alert("Erro ao cadastrar Album")
+                alert("Erro ao cadastrar Álbum")
             }
         })
     }
@@ -46,8 +48,8 @@ export default function CadastroAlbum(){
     function handleCantor(event:ChangeEvent<HTMLInputElement>){
         setCantor(event.target.value)
     }
-    function handleQuant(event:ChangeEvent<HTMLInputElement>){
-        setQuant(event.target.value)
+    function handleQntMsic(event:ChangeEvent<HTMLInputElement>){
+        setQntMsic(event.target.value)
     }
     function handleLancamento(event:ChangeEvent<HTMLInputElement>){
         setLancamento(event.target.value)
@@ -55,10 +57,13 @@ export default function CadastroAlbum(){
     function handleCapa(event:ChangeEvent<HTMLInputElement>){
         setCapa(event.target.value)
     }
+    function handleOuvintes(event:ChangeEvent<HTMLInputElement>){
+        setOuvintes(event.target.value)
+    }
 
     return(
         <>
-            <h1>Tela Cadastro de Album</h1>
+            <h1>Tela Cadastro de Musicas</h1>
             <form onSubmit={handleForm}>
                 <div>
                     <label htmlFor="id">Id</label>
@@ -73,16 +78,20 @@ export default function CadastroAlbum(){
                     <input type="text" name="cantor" onChange={handleCantor} />
                 </div>
                 <div>
-                    <label htmlFor="Quantidade">Quantidade</label>
-                    <input type="text" name="Quantidade" onChange={handleQuant} />
+                    <label htmlFor="quant-music">Quantidade de Musica</label>
+                    <input type="text" name="quant-music" onChange={handleQntMsic} />
                 </div>
                 <div>
-                    <label htmlFor="Lancamento">Lancamento</label>
-                    <input type="text" name="Lancamento"  onChange={handleLancamento}/>
+                    <label htmlFor="lancamento">Lançamento</label>
+                    <input type="text" name="lancamento" onChange={handleLancamento}/>
                 </div>
                 <div>
-                <label htmlFor="capa">Capa</label>
-                    <input type="file" name="capa"  accept="image/png, image/jpeg" onChange={handleCapa}/>
+                    <label htmlFor="capa">Capa</label>
+                    <input type="text" name="capa" onChange={handleCapa} />
+                </div>
+                <div>
+                    <label htmlFor="ouvintes">Ouvintes</label>
+                    <input type="text" name="ouvintes" onChange={handleOuvintes} />
                 </div>
                 <div>
                     <input type="submit" value="Cadastrar"/>
