@@ -52,50 +52,46 @@ useEffect(()=>{
   },[])
   return(
     <>
-    <div className="container-usuario">
-       {usuarios.map(usu=>{
-      return(
-        <div  key={usu.id} className='usuarios'>
-          <h1>{usu.nome_usuario}</h1>
-          <img src={usu.foto_usuario}/>
-          <p>{usu.senha_usuario}</p>
-        </div>
-      )
-    })}
-    </div>
-
     <div className="container-musicas">
        {musicas.map(mus=>{
       return(
         <div  key={mus.id} className='musicas'>
+          <img src={mus.capa_musica}/>
           <h1>{mus.nome_musica}</h1>
           <p>{mus.cantor_musica}</p>
           <p>{mus.genero_musica}</p>
           <p>{mus.letra_musica}</p>
-          <img src={mus.capa_musica}/>
           <p>{mus.lancamento_musica}</p>
           <p>{mus.ouvintes_musica}</p>
         </div>
       )
     })}
     </div>
-
     <div className="container-albuns">
        {album.map(alb=>{
       return(
         <div  key={alb.id} className='albuns'>
+          <img src={alb.capa_album}/>
           <h1>{alb.nome_album}</h1>
           <p>{alb.cantor_album}</p>
           <p>{alb.quant_musicas_album}</p>
           <p>{alb.lancamento_album}</p>
           <p>{alb.ouvintes_album}</p>
-         <img src={alb.capa_album}/>
          
         </div>
       )
     })}
     </div>
-
+    <div className="container-usuario">
+       {usuarios.map(usu=>{
+      return(
+        <div  key={usu.id} className='usuarios'>
+          <h1>{usu.nome_usuario}</h1>
+          <img src={usu.foto_usuario}/>
+        </div>
+      )
+    })}
+    </div>
     </>
     
   )
