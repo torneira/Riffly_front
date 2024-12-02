@@ -65,7 +65,7 @@ export default function CadastroUsuario(){
                 </div>
                 <div>
                     <label htmlFor="senha">Senha</label>
-                    <input type="text" name="senha" onChange={handleSenha} />
+                    <input type="password" name="senha" onChange={handleSenha} />
                 </div>
                 <div>
                     <label htmlFor="email">Email</label>
@@ -73,7 +73,7 @@ export default function CadastroUsuario(){
                 </div>
                 <div>
                     <label htmlFor="foto">Foto</label>
-                    <input type="text" name="foto" onChange={handleFoto}/>
+                    <input type="file" name="foto"  accept="image/png, image/jpeg" onChange={handleFoto}/>
                 </div>
                 <div>
                     <input type="submit" value="Cadastrar"/>
