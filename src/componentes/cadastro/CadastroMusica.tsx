@@ -25,7 +25,7 @@ export default function CadastroMusica(){
             lancamento_musica: lancamento_musica,
             ouvintes_musica: ouvintes_musica
         }
-        fetch("http://localhost:8000/produtos",{
+        fetch("https://riffly-front.vercel.app/musicas",{
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
