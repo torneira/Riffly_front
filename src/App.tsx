@@ -26,11 +26,17 @@ type album ={
   capa_album: string,
   ouvintes_album: number
 }
+type comentarios ={
+  id:number,
+  nome_usuario: string,
+  comentarios:string
+  }
+  
 const App = () => {
   const [musicas, setMusicas] = useState<musicas[]>([])
   const [usuarios, setUsuarios] = useState<usuarios[]>([])
   const [album, setAlbum] = useState<album[]>([])
-  
+  const [comentarios, setComentarios] = useState<comentarios[]>([])
   useEffect(()=>{
     fetch("https://riffly-back.onrender.com/usuarios")
     .then(resposta=>resposta.json())
@@ -43,6 +49,13 @@ useEffect(()=>{
   .then(response => response.json())
   .then(dados => setMusicas(dados))
 },[])
+
+useEffect(()=>{
+  fetch("http://localhost:5173/comentarios")
+  .then(response => response.json())
+  .then(dados => setComentarios(dados))
+},[])
+
 
 /*Listagem de album para um app de musica*/
 useEffect(()=>{
@@ -91,6 +104,16 @@ useEffect(()=>{
           <img src={usu.foto_usuario}/>
           <h1>{usu.nome_usuario}</h1>
           <p>{usu.foto_usuario}</p>
+        </div>
+      )
+    })}
+    </div>
+    <div className="container-comentario">
+       {comentarios.map(com=>{
+      return(
+        <div  key={com.id} className='comentarios'>
+          <h1>{com.nome_usuario}</h1>
+          <p>{com.comentarios}</p>
         </div>
       )
     })}
