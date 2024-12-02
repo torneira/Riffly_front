@@ -1,97 +1,70 @@
-import React, { useState, useEffect, FormEvent } from 'react';
+import { FormEvent, useState, ChangeEvent } from "react";
+import { useNavigate } from "react-router-dom";
 
-// Definindo a interface para um comentário
-interface Comentario {
-    id: number;
-    nome_usuario: string;
-    comentario: string;
-}
-
-const Comentarios: React.FC = () => {
-    const [comentarios, setComentarios] = useState<Comentario[]>([]); // Lista de comentários
-    const [nomeUsuario, setNomeUsuario] = useState<string>(''); // Nome do usuário
-    const [comentario, setComentario] = useState<string>(''); // Texto do comentário
-
-    // Buscar os comentários do servidor
-    const fetchComentarios = async () => {
-        try {
-            const response = await fetch('http://localhost:5000/comentarios');
-            const data = await response.json();
-            setComentarios(data); 
-        } catch (error) {
-            console.error('Erro ao buscar comentários:', error);
+export default function CadastroComentario(){
+    const navigate = useNavigate();
+    const [id,setId] = useState("")
+    const [nome_usuario,setNome] = useState("")
+    const [comentarios,setComentarios] = useState("")
+ 
+    function handleForm(event:FormEvent){
+        event.preventDefault();
+        console.log("Tentei cadastrar comentario");
+        const comentario = {
+            id: id,
+            nome_usuario: nome_usuario,
+            comentarios: comentarios,
+            
         }
-    };
-
-    // Enviar novo comentário para o servidor
-    const enviarComentario = async (e: FormEvent) => {
-        e.preventDefault(); 
-        try {
-            const response = await fetch('http://localhost:5000/comentarios', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ nome_usuario: nomeUsuario, comentario }),
-            });
-            if (response.ok) {
-                setNomeUsuario(''); 
-                setComentario(''); 
-                fetchComentarios(); 
-            } else {
-                console.error('Erro ao enviar comentário');
+        fetch("https://riffly-back.onrender.com/comentarios",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(comentario)
+        }).then(response => {
+            if(response.status === 200){
+                alert("comentario feito com sucesso")
+                navigate("/")
             }
-        } catch (error) {
-            console.error('Erro ao enviar comentário:', error);
-        }
-    };
+            else{
+                alert("Comentario não feito")
+            }
+        })
+    }
+    function handleId(event:ChangeEvent<HTMLInputElement>){
+        setId(event.target.value)
+    }
+    function handleNome(event:ChangeEvent<HTMLInputElement>){
+        setNome(event.target.value)
+    }
+    function handleComentarios(event:ChangeEvent<HTMLInputElement>){
+        setComentarios(event.target.value)
+    }
 
-   
-    useEffect(() => {
-        fetchComentarios();
-    }, []);
+  
 
-    return (
-        <div style={{ maxWidth: '600px', margin: 'auto' }}>
-            <h2>Comentários</h2>
-            <form onSubmit={enviarComentario} style={{ marginBottom: '20px' }}>
+    return(
+        <>
+            <h1>Comentarios</h1>
+            <form onSubmit={handleForm}>
                 <div>
-                    <label>Nome:</label>
-                    <input
-                        type="text"
-                        value={nomeUsuario}
-                        onChange={(e) => setNomeUsuario(e.target.value)}
-                        required
-                        style={{ width: '100%', marginBottom: '10px' }}
-                    />
+                    <label htmlFor="id">Id</label>
+                    <input type="text" name="id" onChange={handleId} />
                 </div>
                 <div>
-                    <label>Comentário:</label>
-                    <textarea
-                        value={comentario}
-                        onChange={(e) => setComentario(e.target.value)}
-                        required
-                        style={{ width: '100%', marginBottom: '10px' }}
-                    />
+                    <label htmlFor="nome">Nome</label>
+                    <input type="text" name="nome" onChange={handleNome} />
                 </div>
-                <button type="submit">Enviar</button>
+                <div>
+                    <label htmlFor="comentario">Comentario</label>
+                    <input type="text" name="comentario" onChange={handleComentarios} />
+                </div>
+            
+                <div>
+                    <input type="submit" value="Cadastrar"/>
+                </div>
             </form>
-
-            <div>
-                {comentarios.map((c) => (
-                    <div
-                        key={c.id}
-                        style={{
-                            borderBottom: '1px solid #ddd',
-                            marginBottom: '10px',
-                            paddingBottom: '10px',
-                        }}
-                    >
-                        <strong>{c.nome_usuario}</strong>
-                        <p>{c.comentario}</p>
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
-};
-
-export default Comentarios;
+        </>
+    )
+}
