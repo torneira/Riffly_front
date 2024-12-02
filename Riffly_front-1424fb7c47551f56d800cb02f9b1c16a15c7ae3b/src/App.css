@@ -118,11 +118,3 @@
   font-style: normal;
   color: rgb(152, 37, 156)
 }
-
-/* nigga*/
-
-.container-musicas{
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-}
