@@ -12,7 +12,7 @@ export default function CadastroAlbum(){
 
     function handleForm(event:FormEvent){
         event.preventDefault();
-        console.log("Tentei cadastrar usuarios");
+        console.log("Tentei cadastrar album");
         const album = {
             id: id,
             nome_album: nome_album,
@@ -21,7 +21,7 @@ export default function CadastroAlbum(){
             lancamento_album: lancamento_album,
             capa_album:capa_album
         }
-        fetch("https://riffly-back.onrender.com/usuarios",{
+        fetch("https://riffly-back.onrender.com/album",{
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -29,11 +29,11 @@ export default function CadastroAlbum(){
             body: JSON.stringify(album)
         }).then(response => {
             if(response.status === 200){
-                alert("Usuario cadastrado com sucesso")
+                alert("Album cadastrado com sucesso")
                 navigate("/")
             }
             else{
-                alert("Erro ao cadastrar usuario")
+                alert("Erro ao cadastrar Album")
             }
         })
     }
@@ -58,7 +58,7 @@ export default function CadastroAlbum(){
 
     return(
         <>
-            <h1>Tela Cadastro de Usuarios</h1>
+            <h1>Tela Cadastro de Album</h1>
             <form onSubmit={handleForm}>
                 <div>
                     <label htmlFor="id">Id</label>
