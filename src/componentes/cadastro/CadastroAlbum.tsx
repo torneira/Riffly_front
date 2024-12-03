@@ -87,7 +87,7 @@ export default function CadastroAlbum(){
                 </div>
                 <div>
                     <label htmlFor="capa">Capa</label>
-                    <input type="text" name="capa" onChange={handleCapa} />
+                    <input type="file" name="capa"  accept="image/png, image/jpeg"  onChange={handleCapa} />
                 </div>
                 <div>
                     <label htmlFor="ouvintes">Ouvintes</label>
