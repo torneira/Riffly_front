@@ -23,7 +23,7 @@ export default function CadastroAlbum(){
             capa_album : capa_album,
             ouvintes_album: ouvintes_album
         }
-        fetch("https://riffly-back.onrender.com/album",{
+        fetch("https://riffly-front.vercel.app/album",{
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
