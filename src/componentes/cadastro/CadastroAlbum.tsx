@@ -63,7 +63,7 @@ export default function CadastroAlbum(){
 
     return(
         <>
-            <h1>Tela Cadastro de Musicas</h1>
+            <h1>Tela Cadastro de Álbum</h1>
             <form onSubmit={handleForm}>
                 <div>
                     <label htmlFor="id">Id</label>
