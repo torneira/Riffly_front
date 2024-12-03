@@ -65,7 +65,6 @@ useEffect(()=>{
   },[])
   return(
     <>
-    <button href="/cadastro-comentarios">Escrever comentarios</button>
     <h1>Musicas</h1>
     <div className="container-musicas">
        {musicas.map(mus=>{
