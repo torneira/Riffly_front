@@ -93,6 +93,7 @@ export default function CadastroMusica(){
                 <div>
                     <label htmlFor="capa">Capa</label>
                     <input type="file" name="capa"  accept="image/png, image/jpeg" onChange={handleCapa} />
+                    
                 </div>
                 <div>
                     <label htmlFor="lancamento">Lançamento</label>
