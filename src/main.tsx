@@ -19,19 +19,19 @@ const router = createBrowserRouter([
     element: <App/>,
   },
   {
-    path: "/usuarios",
+    path: "/cadastro-usuarios",
     element: <CadastroUsuario/>,
   },
   {
-    path: "/musicas",
+    path: "/cadastro-musicas",
     element: <CadastroMusica/>,
   },
   {
-    path: "/album",
+    path: "/cadastro-album",
     element: <CadastroAlbum/>,
   },
   {
-    path: "/comentarios",
+    path: "/cadastro-comentarios",
     element: <Comentarios/>,
   }
 ]);
