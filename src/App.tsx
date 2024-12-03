@@ -65,11 +65,12 @@ useEffect(()=>{
   },[])
   return(
     <>
+    <h1>Musicas</h1>
     <div className="container-musicas">
        {musicas.map(mus=>{
       return(
         <div  key={mus.id} className='musicas'>
-          <img src={mus.capa_musica}/>
+          <img className="imagem-musica" src={mus.capa_musica}/>
           <h1>{mus.nome_musica}</h1>
           <p>{mus.cantor_musica}</p>
           <p>{mus.genero_musica}</p>

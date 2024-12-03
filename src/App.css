@@ -1,8 +1,11 @@
+
 #root {
   max-width: 1280px;
-  margin: 0 auto;
+  min-width: 900px;
   padding: 2rem;
   text-align: center;
+
+  
 }
 
 .logo {
@@ -41,88 +44,34 @@
   color: #888;
 }
 
-/* Estilo para o container de produtos */
-.container-produtos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-/* Estilo para cada item de produto */
-.produto-item {
-  background-color: #686868;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 20px;
-  max-width: 250px;
-  text-align: center;
-}
-
-.produto-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
-
-.produto-item h1 {
-  margin-top: 20px;
-  font-size: 1.5em;
-  color: #ffffff;
-}
-
-.produto-item p {
-  margin-top: 20px;
-  font-size: 1em;
-  color: #ffffff;
-}
-
-/* Estilo para o container de usuários */
-.container-usuarios {
-  margin-top: 50px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-/* Estilo para cada item de usuário */
-.usuario-item {
-  background-color: #686868;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 15px;
-  max-width: 250px;
-  text-align: center;
-}
-
-.usuario-item h1 {
-  margin-top: 20px;
-  font-size: 1.5em;
-  color: #ffffff;
-}
-
-.usuario-item p {
-  margin-top: 20px;
-  font-size: 1em;
-  color: #ffffff;
-}
-
-.titulo{
-  margin-top: 40px;
-  text-align: center;
-  font-size: 50px;
-  font-family: "Teko", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  color: rgb(152, 37, 156)
-}
 
 /* nigga*/
 
 .container-musicas{
+  color: #FFF;
+  box-shadow: 0px 0px 5px 0px rgb(255, 255, 255); 
+flex-direction: row;
+  padding: 10px;
+  margin: 10px;
+  max-width: 100%;
+  min-width: 100%;
+  max-height: 60%;
+  min-height: 60%;
+  border-radius: 10px;
+  text-align: center;
   display: flex;
-  align-items: center;
+}
+.imagem-musica{
+  max-width: 250px;
+  max-height: 200px;
+}
+.musicas{
+  color: #FFF;
+  box-shadow: 0px 0px 5px 0px rgb(255, 255, 255); 
   flex-direction: row;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  text-align: center;
+  justify-content: space-between;
 }
