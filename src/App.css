@@ -68,8 +68,7 @@
 .musicas{
   color: #FFF;
   box-shadow: 0px 0px 5px 0px rgb(255, 255, 255); 
-  flex-direction: row;
-  padding: 10px;
-  margin: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   border-radius: 10px;
 }
