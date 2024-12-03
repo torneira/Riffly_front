@@ -45,13 +45,13 @@ const App = () => {
 
 
 useEffect(()=>{
-  fetch("http://localhost:5173/musicas")
+  fetch("https://riffly-back.onrender.com/musicas")
   .then(response => response.json())
   .then(dados => setMusicas(dados))
 },[])
 
 useEffect(()=>{
-  fetch("http://localhost:5173/comentarios")
+  fetch("https://riffly-back.onrender.com/comentarios")
   .then(response => response.json())
   .then(dados => setComentarios(dados))
 },[])
