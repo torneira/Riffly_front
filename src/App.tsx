@@ -104,7 +104,6 @@ useEffect(()=>{
         <div  key={usu.id} className='usuarios'>
           <img src={usu.foto_usuario}/>
           <h1>{usu.nome_usuario}</h1>
-          <p>{usu.foto_usuario}</p>
         </div>
       )
     })}
