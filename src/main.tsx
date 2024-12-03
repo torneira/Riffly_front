@@ -9,6 +9,7 @@ import {
 import CadastroUsuario from './componentes/cadastro/CadastroUsuario.tsx';
 import CadastroMusica from './componentes/cadastro/CadastroMusica.tsx';
 import CadastroAlbum from './componentes/cadastro/CadastroAlbum.tsx';
+import Comentarios from './componentes/cadastro/Comentarios.tsx';
 
 //Crie um comentário explicando o que faz o código abaixo
 //Cria uma instância do BrowserRouter e passa um array de objetos com as rotas da aplicação
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
     path: "/album",
     element: <CadastroAlbum/>,
   },
+  {
+    path: "/comentarios",
+    element: <Comentarios/>,
+  }
 ]);
 
 createRoot(document.getElementById('root')!).render(

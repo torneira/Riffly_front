@@ -25,7 +25,7 @@ export default function CadastroMusica(){
             lancamento_musica: lancamento_musica,
             ouvintes_musica: ouvintes_musica
         }
-        fetch("https://riffly-front.vercel.app/musicas",{
+        fetch("https://riffly-back.onrender.com/musicas",{
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -93,6 +93,7 @@ export default function CadastroMusica(){
                 <div>
                     <label htmlFor="capa">Capa</label>
                     <input type="file" name="capa"  accept="image/png, image/jpeg" onChange={handleCapa} />
+                    
                 </div>
                 <div>
                     <label htmlFor="lancamento">Lançamento</label>
