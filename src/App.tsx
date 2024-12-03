@@ -45,7 +45,7 @@ const App = () => {
 
 
 useEffect(()=>{
-  fetch("https://riffly-back.onrender.com/musicas")
+  fetch("http://localhost:5173/musicas")
   .then(response => response.json())
   .then(dados => setMusicas(dados))
 },[])
