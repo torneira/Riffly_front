@@ -65,7 +65,7 @@ useEffect(()=>{
   },[])
   return(
     <>
-    <h1>Musicas</h1>
+    <h1>Músicas</h1>
     <div className="container-musicas">
        {musicas.map(mus=>{
       return(
@@ -80,7 +80,7 @@ useEffect(()=>{
       )
     })}
     </div>
-    <h1>Albuns</h1>
+    <h1>Álbuns</h1>
     <div className="container-albuns">
        {album.map(alb=>{
       return(
@@ -96,12 +96,14 @@ useEffect(()=>{
       )
     })}
     </div>
-    
+    <h1>Usuários</h1>
     <div className="container-usuario">
        {usuarios.map(usu=>{
       return(
         <div  key={usu.id} className='usuarios'>
-          <img src={usu.foto_usuario}/>
+          <div className="imagem-user">
+            <img src={usu.foto_usuario}/>
+          </div>
           <h1>{usu.nome_usuario}</h1>
         </div>
       )
