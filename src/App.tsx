@@ -66,6 +66,19 @@ useEffect(()=>{
   return(
     <>
     <h1>Músicas</h1>
+    <div className="b1">
+      <p>Poste sua musica</p>
+    </div>
+    <div className="b2">
+      <p>Poste seu album</p>
+    </div>
+    <div className="b3">
+      <p>Comente</p>
+    </div>
+    <div className="b4">
+      <p>Cadastre-se</p>
+    </div>
+    <h1>Musicas</h1>
     <div className="container-musicas">
        {musicas.map(mus=>{
       return(

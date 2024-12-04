@@ -2,8 +2,6 @@
 #root {
   width: 100%;
   text-align: center;
-
-  
 }
 
 .container-musicas{
@@ -22,7 +20,6 @@
   margin-top: 30px;
   transform: scale(1.1);
   transition: transform 0.3s ease;
-
 }
 
 .musicas:hover{
@@ -141,4 +138,76 @@
 
 .usuarios h1{
   font-size: 27px;
+}
+.b1{
+  background: linear-gradient(to bottom, #167445, #15283d);
+  margin:10px;
+  display:inline-block;
+  justify-content: center;
+  align-content: center;
+  margin-top: 23px;
+  border-radius: 60px;
+  width: 150px;
+  height: 59px;
+    font-size: 12px; 
+    cursor: pointer; 
+    transition: background-color 0.3s, transform 0.3s;
+    font-weight: bold; 
+}
+.b1:hover{
+  transform: scale(1.05);
+}
+.b2{
+  background: linear-gradient(to bottom, #167445, #15283d);
+  margin:10px;
+  display:inline-block;
+  justify-content: center;
+  align-content: center;
+  margin-top: 23px;
+  border-radius: 60px;
+  width: 150px;
+  height: 59px;
+  font-size: 12px; 
+  cursor: pointer; 
+  transition: background-color 0.3s, transform 0.3s;
+  font-weight: bold; 
+}
+.b2:hover{
+  transform: scale(1.05);
+}
+.b3{
+  background: linear-gradient(to bottom, #167445, #15283d);
+  margin:10px;
+  display:inline-block;
+  justify-content: center;
+  align-content: center;
+  margin-top: 23px;
+  border-radius: 60px;
+  width: 150px;
+  height: 59px;
+  font-size: 12px; 
+  cursor: pointer; 
+  transition: background-color 0.3s, transform 0.3s;
+  font-weight: bold; 
+}
+.b3:hover{
+  transform: scale(1.05);
+}
+.b4{
+  background: linear-gradient(to bottom, #167445, #15283d);
+  display:inline-block;
+  justify-content: center;
+  align-content: center;
+  margin-left: 900px;
+  margin-top: 23px;
+  border-radius: 60px;
+  width: 120px;
+  height: 59px;
+  font-size: 12px; 
+  cursor: pointer; 
+  transition: background-color 0.3s, transform 0.3s;
+  font-weight: bold; 
+}
+.b4:hover{
+  transform: scale(1.05);
 }
