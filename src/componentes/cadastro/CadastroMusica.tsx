@@ -87,7 +87,7 @@ export default function CadastroMusica(){
                     <input type="text" name="genero" onChange={handleGenero} />
                 </div>
                 <div>
-                    <label htmlFor="letra">Letra</label>
+                    <label htmlFor="letra">Sobre a letra</label>
                     <input type="text" name="letra" onChange={handleLetra}/>
                 </div>
                 <div>
