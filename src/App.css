@@ -25,7 +25,7 @@
 
 }
 
-.imagem-musica:hover{
+.musicas:hover{
   transform: scale(1.05);
 }
 
@@ -35,8 +35,61 @@
   box-shadow: 0px 0px 5px 0px rgb(255, 255, 255); 
   border-radius: 10px;
   width: 360px;
+  transform: scale(1.0);
+  transition: transform 0.3s ease;
 }
 
 .musicas h1{
   font-size: 27px;
+}
+
+.musicas p{
+  padding-left: 15px;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+/*albuns*/
+
+.container-albuns{
+  box-shadow: 0px 0px 5px 0px rgb(255, 255, 255); 
+  flex-direction: row;
+  padding: 15px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 30px;
+  border-radius: 10px;
+  display: flex;
+
+}
+.container-albuns img{
+  max-width: 250px;
+  max-height: 170px;
+  margin-top: 30px;
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+
+}
+
+.albuns:hover{
+  transform: scale(1.05);
+}
+
+.albuns{
+  color: #FFF;
+  margin: 12px;
+  box-shadow: 0px 0px 5px 0px rgb(255, 255, 255); 
+  border-radius: 10px;
+  width: 360px;
+  transform: scale(1.0);
+  transition: transform 0.3s ease;
+}
+
+.albuns h1{
+  font-size: 27px;
+}
+.albuns p{
+  padding-left: 15px;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.87);
 }
