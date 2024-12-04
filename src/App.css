@@ -40,3 +40,39 @@
 .musicas h1{
   font-size: 27px;
 }
+
+
+.container-album{
+  box-shadow: 0px 0px 5px 0px rgb(255, 255, 255); 
+  flex-direction: row;
+  padding: 15px;
+  margin-right: 20px;
+  margin-left: 20px;
+  border-radius: 10px;
+  display: flex;
+
+}
+.imagem-album{
+  max-width: 250px;
+  max-height: 170px;
+  margin-top: 30px;
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+
+}
+
+.imagem-album:hover{
+  transform: scale(1.05);
+}
+
+.album{
+  color: #FFF;
+  margin: 12px;
+  box-shadow: 0px 0px 5px 0px rgb(255, 255, 255); 
+  border-radius: 10px;
+  width: 360px;
+}
+
+.album h1{
+  font-size: 27px;
+}
