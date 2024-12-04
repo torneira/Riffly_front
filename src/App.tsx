@@ -65,7 +65,6 @@ useEffect(()=>{
   },[])
   return(
     <>
-    <h1>Músicas</h1>
     <div className="b1">
       <p>Poste sua musica</p>
     </div>
