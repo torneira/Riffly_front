@@ -32,7 +32,7 @@ type comentarios ={
   comentarios:string
   }
   
-const App = () => {
+function App() {
   const [musicas, setMusicas] = useState<musicas[]>([])
   const [usuarios, setUsuarios] = useState<usuarios[]>([])
   const [album, setAlbum] = useState<album[]>([])
