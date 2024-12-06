@@ -65,7 +65,7 @@ useEffect(()=>{
   },[])
   return(
     <>
-    <button href="https://riffly-front.vercel.app/cadastro-musicas"className="b1"></button>
+    <button href="https://riffly-front.vercel.app/cadastro-musicas"className="b1">Poste sua música</button>
     <div className="b2">
       <p>Poste seu album</p>
     </div>
