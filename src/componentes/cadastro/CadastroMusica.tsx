@@ -1,5 +1,6 @@
 import { FormEvent, useState, ChangeEvent } from "react";
 import { useNavigate } from "react-router-dom";
+import "./CadastroMusica.css"
 
 export default function CadastroMusica(){
     const navigate = useNavigate();
@@ -68,7 +69,10 @@ export default function CadastroMusica(){
 
     return(
         <>
-            <h1>Tela Cadastro de Musicas</h1>
+            /*Colocar link para a pagina inicial neste e nos outros cadastros e fazer/adapitar o css dos comentarios 
+            e fazer eles aparecerem na tela inical e se possivel arrumar a tela inicial que por algun motivo ficou tudo grande */
+            <a href="">Inicio</a>
+            <h1 className="titulo">Tela Cadastro de Músicas</h1>
             <form onSubmit={handleForm}>
                 <div>
                     <label htmlFor="id">Id</label>
@@ -92,7 +96,7 @@ export default function CadastroMusica(){
                 </div>
                 <div>
                     <label htmlFor="capa">Capa</label>
-                    <input type="file" name="capa"  accept="image/png, image/jpeg" onChange={handleCapa} />
+                    <input type="link" name="capa" placeholder="Link da imagem"  accept="image/png, image/jpeg" onChange={handleCapa} />
                     
                 </div>
                 <div>
@@ -103,7 +107,7 @@ export default function CadastroMusica(){
                     <label htmlFor="ouvintes">Ouvintes</label>
                     <input type="text" name="ouvintes" onChange={handleOuvintes} />
                 </div>
-                <div>
+                <div className="button">
                     <input type="submit" value="Cadastrar"/>
                 </div>
             </form>

@@ -1,5 +1,6 @@
 import { FormEvent, useState, ChangeEvent } from "react";
 import { useNavigate } from "react-router-dom";
+import "./CadastroUsuario.css"
 
 export default function CadastroUsuario(){
     const navigate = useNavigate();
@@ -53,7 +54,8 @@ export default function CadastroUsuario(){
 
     return(
         <>
-            <h1>Tela Cadastro de Usuarios</h1>
+            <a href="">Inicio</a>
+            <h1 className="titulo">Tela Cadastro de Músicas</h1>
             <form onSubmit={handleForm}>
                 <div>
                     <label htmlFor="id">Id</label>
@@ -73,9 +75,9 @@ export default function CadastroUsuario(){
                 </div>
                 <div>
                     <label htmlFor="foto">Foto</label>
-                    <input type="file" name="foto"  accept="image/png, image/jpeg" onChange={handleFoto}/>
+                    <input type="link" name="foto" placeholder="Link da foto"  accept="image/png, image/jpeg" onChange={handleFoto}/>
                 </div>
-                <div>
+                <div className="button">
                     <input type="submit" value="Cadastrar"/>
                 </div>
             </form>

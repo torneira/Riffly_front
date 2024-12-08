@@ -12,7 +12,6 @@
   margin-left: 20px;
   border-radius: 10px;
   display: flex;
-
 }
 .imagem-musica{
   max-width: 250px;
@@ -160,6 +159,8 @@
   transform: scale(1.05);
 }
 .b2{
+  color: white;
+  text-decoration: none;
   background: linear-gradient(to bottom, #167445, #15283d);
   margin:10px;
   display:inline-block;
@@ -178,6 +179,8 @@
   transform: scale(1.05);
 }
 .b3{
+  color: white;
+  text-decoration: none;
   background: linear-gradient(to bottom, #167445, #15283d);
   margin:10px;
   display:inline-block;
@@ -196,6 +199,8 @@
   transform: scale(1.05);
 }
 .b4{
+  color: white;
+  text-decoration: none;
   background: linear-gradient(to bottom, #167445, #15283d);
   display:inline-block;
   justify-content: center;
@@ -212,4 +217,12 @@
 }
 .b4:hover{
   transform: scale(1.05);
+}
+
+.cabecario{
+  width: 100%;
+  display: inline-flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
 }

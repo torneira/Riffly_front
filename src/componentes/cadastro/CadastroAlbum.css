@@ -1,0 +1,60 @@
+#root{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form{
+    align-self: center;
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+}
+
+form div{
+    padding-top: 13px;
+    display: flex;
+    flex-direction: column;
+}
+
+form div label{
+    align-self: flex-start;
+}
+
+form div input{
+    color: white;
+}
+
+.button input{
+    margin-top: 50px;
+    align-self: center;
+    background: linear-gradient(to bottom, #167445, #15283d);
+    width: 150px;
+    height: 50px;
+    color: white;
+    border: none;
+    border-radius: 50px;
+}
+
+a{
+    background: linear-gradient(to bottom, #167445, #15283d);
+    margin:10px;
+    display:inline-block;
+    justify-content: center;
+    align-content: center;
+    margin-top: 23px;
+    border-radius: 60px;
+    width: 100px;
+    height: 40px;
+    font-size: 12px; 
+    cursor: pointer; 
+    transition: background-color 0.3s, transform 0.3s;
+    font-weight: bold; 
+    text-decoration: none;
+    color: white;
+    align-self: flex-start;
+}
+
+.titulo{
+    margin-top: 0px;
+}
