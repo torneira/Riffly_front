@@ -1,50 +1,32 @@
-# React + TypeScript + Vite
+<h1> Repositorio de musica </h1> 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Status: Concluído ✅
+### Descriçao simplificada
 
-Currently, two official plugins are available:
+Nosso site de música oferece uma experiência completa para amantes de música de todos os gêneros. Os usuários podem explorar uma vasta coleção de músicas e álbuns, registrados de maneira organizada e fácil de navegar. Além disso, o site permite que os usuários se registrem, criem suas próprias contas, e contribuam postando suas músicas e álbuns. É uma plataforma interativa onde artistas e ouvintes podem se conectar, compartilhar e descobrir novas músicas. Junte-se a nós e faça parte desta comunidade musical vibrante
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Dados necessários para cadastro:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
++ Nome
++ Usuário
++ Senha
 
-- Configure the top-level `parserOptions` property like this:
+## As Principais funcionalidades são:
+* Cadastrar um novo álbum 
+* Cadastrar uma nova música 
+* Fazer comentários 
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Como ter acesso ao site:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+1) Acesse o site: Abra seu navegador e pesquise por https://riffly-front.vercel.app.
+2) Cadastre-se: Clique no botão de cadastro e preencha suas informações para criar uma conta.
+3) Aproveite a plataforma: Após o cadastro bem-sucedido, explore e desfrute desta plataforma maravilhosa!😜
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Colaboradores desse projeto:
++ MARIA CLARA FELDKIRCHER DE OLIVEIRA
++ LUCAS FELIPE DE OLIVEIRA LIMA
++ GUILHERME DE OLIVEIRA SOUZA
++ GUSTAVO AGUIAR TENÓRIO PRAZER
++ MARCUS GABRIEL COLINSKI TAVARES DA SILVA
++ VICTOR HUGO DA COSTA BUENO
