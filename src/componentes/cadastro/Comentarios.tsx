@@ -46,6 +46,7 @@ export default function CadastroComentario(){
 
     return(
         <>
+            <a href="http://localhost:5173/">Inicio</a>
             <h1>Comentarios</h1>
             <form onSubmit={handleForm}>
                 <div>

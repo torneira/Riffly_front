@@ -66,8 +66,8 @@ useEffect(()=>{
   return(
     <>
     <header className="cabecario">
-      <a href="http://localhost:5173/cadastro-musicas" className="b1">Poste sua música</a>
-      <a href="http://localhost:5173/cadastro-album" className="b2">Poste seu album</a>
+      <a href="http://localhost:5173/cadastro-musicas" className="b1">Nova Música</a>
+      <a href="http://localhost:5173/cadastro-album" className="b2">Novo Album</a>
       <a href="http://localhost:5173/cadastro-comentarios" className="b3">Comente</a>
       <a href="http://localhost:5173/cadastro-usuarios" className="b4">Cadastre-se</a>
     </header>

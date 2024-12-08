@@ -69,9 +69,7 @@ export default function CadastroMusica(){
 
     return(
         <>
-            /*Colocar link para a pagina inicial neste e nos outros cadastros e fazer/adapitar o css dos comentarios 
-            e fazer eles aparecerem na tela inical e se possivel arrumar a tela inicial que por algun motivo ficou tudo grande */
-            <a href="">Inicio</a>
+            <a href="http://localhost:5173/">Inicio</a>
             <h1 className="titulo">Tela Cadastro de Músicas</h1>
             <form onSubmit={handleForm}>
                 <div>
@@ -107,7 +105,7 @@ export default function CadastroMusica(){
                     <label htmlFor="ouvintes">Ouvintes</label>
                     <input type="text" name="ouvintes" onChange={handleOuvintes} />
                 </div>
-                <div className="button">
+                <div>
                     <input type="submit" value="Cadastrar"/>
                 </div>
             </form>

@@ -138,83 +138,65 @@
 .usuarios h1{
   font-size: 27px;
 }
+
 .b1{
-  background: linear-gradient(to bottom, #167445, #15283d);
-  margin:10px;
-  display:inline-block;
-  justify-content: center;
-  align-content: center;
-  margin-top: 23px;
-  border-radius: 60px;
-  width: 150px;
-  height: 59px;
-    font-size: 12px; 
-    cursor: pointer; 
-    transition: background-color 0.3s, transform 0.3s;
-    font-weight: bold; 
-  text-decoration: none;
-  color: white;
+  background: none; 
+  border: 2px solid #aaa; 
+  color: #aaa; 
+  border-radius: 20px; 
+  padding: 10px 20px; 
+  font-size: 14px; 
+  cursor: pointer; 
+  transition: all 0.3s ease; 
 }
+
 .b1:hover{
   transform: scale(1.05);
 }
+
 .b2{
-  color: white;
-  text-decoration: none;
-  background: linear-gradient(to bottom, #167445, #15283d);
-  margin:10px;
-  display:inline-block;
-  justify-content: center;
-  align-content: center;
-  margin-top: 23px;
-  border-radius: 60px;
-  width: 150px;
-  height: 59px;
-  font-size: 12px; 
+  background: none; 
+  border: 2px solid #aaa; 
+  color: #aaa; 
+  border-radius: 20px; 
+  padding: 10px 20px; 
+  font-size: 14px; 
   cursor: pointer; 
-  transition: background-color 0.3s, transform 0.3s;
-  font-weight: bold; 
+  transition: all 0.3s ease; 
 }
+
 .b2:hover{
   transform: scale(1.05);
 }
+
 .b3{
-  color: white;
-  text-decoration: none;
-  background: linear-gradient(to bottom, #167445, #15283d);
-  margin:10px;
-  display:inline-block;
-  justify-content: center;
-  align-content: center;
-  margin-top: 23px;
-  border-radius: 60px;
-  width: 150px;
-  height: 59px;
-  font-size: 12px; 
+  background: none; 
+  border: 2px solid #aaa; 
+  color: #aaa; 
+  border-radius: 20px; 
+  padding: 10px 20px; 
+  font-size: 14px; 
   cursor: pointer; 
-  transition: background-color 0.3s, transform 0.3s;
-  font-weight: bold; 
+  transition: all 0.3s ease; 
+  
 }
+
 .b3:hover{
   transform: scale(1.05);
 }
+
 .b4{
-  color: white;
-  text-decoration: none;
-  background: linear-gradient(to bottom, #167445, #15283d);
-  display:inline-block;
-  justify-content: center;
-  align-content: center;
-  margin-left: 900px;
-  margin-top: 23px;
-  border-radius: 60px;
-  width: 120px;
-  height: 59px;
-  font-size: 12px; 
+  background: none; 
+  border: 2px solid #aaa; 
+  color: #aaa; 
+  border-radius: 20px; 
+  padding: 10px 20px; 
+  font-size: 14px; 
   cursor: pointer; 
-  transition: background-color 0.3s, transform 0.3s;
-  font-weight: bold; 
+  transition: all 0.3s ease; 
+  
 }
+
 .b4:hover{
   transform: scale(1.05);
 }

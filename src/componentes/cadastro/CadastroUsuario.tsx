@@ -54,8 +54,8 @@ export default function CadastroUsuario(){
 
     return(
         <>
-            <a href="">Inicio</a>
-            <h1 className="titulo">Tela Cadastro de Músicas</h1>
+            <a href="http://localhost:5173/">Inicio</a>
+            <h1 className="titulo">Cadastre-se</h1>
             <form onSubmit={handleForm}>
                 <div>
                     <label htmlFor="id">Id</label>
@@ -77,7 +77,7 @@ export default function CadastroUsuario(){
                     <label htmlFor="foto">Foto</label>
                     <input type="link" name="foto" placeholder="Link da foto"  accept="image/png, image/jpeg" onChange={handleFoto}/>
                 </div>
-                <div className="button">
+                <div>
                     <input type="submit" value="Cadastrar"/>
                 </div>
             </form>

@@ -64,7 +64,7 @@ export default function CadastroAlbum(){
 
     return(
         <>
-            <a href="">Inicio</a>
+            <a href="http://localhost:5173/">Inicio</a>
             <h1 className="titulo">Tela Cadastro de Álbum</h1>
             <form onSubmit={handleForm}>
                 <div>
@@ -95,7 +95,7 @@ export default function CadastroAlbum(){
                     <label htmlFor="ouvintes">Ouvintes</label>
                     <input type="text" name="ouvintes" onChange={handleOuvintes} />
                 </div>
-                <div className="button">
+                <div>
                     <input type="submit" value="Cadastrar"/>
                 </div>
             </form>
