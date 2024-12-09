@@ -115,11 +115,12 @@ useEffect(()=>{
       )
     })}
     </div>
+    <h1>Comentários</h1>
     <div className="container-comentario">
        {comentarios.map(com=>{
       return(
         <div  key={com.id} className='comentarios'>
-          <h1>{com.nome_usuario}</h1>
+          <h2>{com.nome_usuario}</h2>
           <p>{com.comentarios}</p>
         </div>
       )

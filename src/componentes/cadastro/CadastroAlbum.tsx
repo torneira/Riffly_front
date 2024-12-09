@@ -64,7 +64,7 @@ export default function CadastroAlbum(){
 
     return(
         <>
-            <a href="http://localhost:5173/">Inicio</a>
+            <a href="https://riffly-front.vercel.app">Inicio</a>
             <h1 className="titulo">Tela Cadastro de Álbum</h1>
             <form onSubmit={handleForm}>
                 <div>
