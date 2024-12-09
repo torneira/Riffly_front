@@ -69,7 +69,7 @@ useEffect(()=>{
       <a href="http://localhost:5173/cadastro-musicas" className="b1">Nova Música</a>
       <a href="http://localhost:5173/cadastro-album" className="b2">Novo Album</a>
       <a href="http://localhost:5173/cadastro-comentarios" className="b3">Comente</a>
-      <a href="riffly-front.vercel.app/cadastro-usuarios" className="b4">Cadastre-se</a>
+      <a href="https://riffly-front.vercel.app/cadastro-usuarios" className="b4">Cadastre-se</a>
     </header>
     <h1>Músicas</h1>
     <div className="container-musicas">
