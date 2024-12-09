@@ -71,7 +71,7 @@ useEffect(()=>{
       <a href="http://localhost:5173/cadastro-comentarios" className="b3">Comente</a>
       <a href="http://localhost:5173/cadastro-usuarios" className="b4">Cadastre-se</a>
     </header>
-    <h1>Musicas</h1>
+    <h1>Músicas</h1>
     <div className="container-musicas">
        {musicas.map(mus=>{
       return(
