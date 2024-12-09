@@ -78,6 +78,7 @@ useEffect(()=>{
         <div  key={mus.id} className='musicas'>
           <img className="imagem-musica" src={mus.capa_musica}/>
           <h1>{mus.nome_musica}</h1>
+          <h3>{mus.cantor_musica}</h3>
           <p>Genero: {mus.genero_musica}</p>
           <p>Ano: {mus.lancamento_musica}</p>
           <p>Ouvintes: {mus.ouvintes_musica}</p>
@@ -92,7 +93,6 @@ useEffect(()=>{
         <div  key={alb.id} className='albuns'>
           <img src={alb.capa_album}/>
           <h1>{alb.nome_album}</h1>
-          <h3>{alb.cantor_album}</h3>
           <p>Musicas: {alb.quant_musicas_album}</p>
           <p>Ano: {alb.lancamento_album}</p>
           <p>Ouvintes: {alb.ouvintes_album}</p>
