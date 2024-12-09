@@ -1,3 +1,11 @@
+/*FLUXO
+
+O formulário captura os dados inseridos pelo usuário;
+Os dados são agrupados em um objeto MUSICA;
+Enviados via FETCH para a API;
+O usuário é notificado do sucesso ou erro;
+Redirecionado para a página inicial em caso de sucesso.*/
+
 import { FormEvent, useState, ChangeEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import "./CadastroMusica.css"
@@ -27,7 +35,7 @@ export default function CadastroMusica(){
             ouvintes_musica: ouvintes_musica
         }
         fetch("https://riffly-back.onrender.com/musicas",{
-            method: "POST",
+            method: "POST", // Método para enviar dados
             headers: {
                 "Content-Type": "application/json"
             },
@@ -35,12 +43,14 @@ export default function CadastroMusica(){
         }).then(response => {
             if(response.status === 200){
                 alert("Musica cadastrada com sucesso")
-                navigate("/")
+                navigate("/") // Redireciona para página inicial
             }
             else{
                 alert("Erro ao cadastrar Musica")
             }
         })
+
+        // Atualiza estados ao digitar
     }
     function handleId(event:ChangeEvent<HTMLInputElement>){
         setId(event.target.value)
