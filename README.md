@@ -1,5 +1,4 @@
-![Captura de tela 2024-12-08 185216](https://github.com/user-attachments/assets/9f5f20cb-a778-49ca-9789-780242740310)
-
+![Captura de tela 2024-12-09 070600](https://github.com/user-attachments/assets/1d6dc38f-23e0-4041-b7f7-99eb473032ca)
 > Status: Concluído ✅
 ### Descriçao simplificada
 
@@ -15,7 +14,9 @@ Nosso site de música oferece uma experiência completa para amantes de música 
 ## As Principais funcionalidades são:
 * Cadastrar um novo álbum 
 * Cadastrar uma nova música 
-* Fazer comentários 
+* Fazer comentários
+* Cadastro de usuário
+* Visualizaçoes de conteudos
 
 ## Como ter acesso ao site:
 
