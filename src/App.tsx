@@ -1,6 +1,6 @@
 import { useEffect,useState } from "react";
 import './App.css'
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 type usuarios ={
   id: number,
   nome_usuario: string,
