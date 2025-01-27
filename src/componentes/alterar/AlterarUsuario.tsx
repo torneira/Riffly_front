@@ -58,7 +58,7 @@ function AlterarAlbum(){
         function handleCantor(event:ChangeEvent<HTMLInputElement>){
             setCantor(event.target.value)
         }
-        function handleQntMsic(event:ChangeEvent<HTMLInputElement>){
+        function handleQuant(event:ChangeEvent<HTMLInputElement>){
             setQuant(event.target.value)
         }
         function handleLancamento(event:ChangeEvent<HTMLInputElement>){
@@ -83,27 +83,28 @@ function AlterarAlbum(){
                     </div>
                     <div>
                         <label htmlFor="nome">Nome</label>
-                        <input type="text" name="nome" onChange={handleNome} />
+                        <input type="text" name="nome" value={nome_album}onChange={handleNome} />
                     </div>
                     <div>
                         <label htmlFor="cantor">Cantor</label>
-                        <input type="text" name="cantor" onChange={handleCantor} />
+                        <input type="text" name="cantor" value={cantor_album} onChange={handleCantor} />
                     </div>
                     <div>
                         <label htmlFor="quant-music">Quantidade de Musica</label>
-                        <input type="text" name="quant-music" onChange={handleQntMsic} />
+                        <input type="text" name="quant-music" value={quant_musicas_album} onChange={handleQuant} />
                     </div>
                     <div>
                         <label htmlFor="lancamento">Lançamento</label>
-                        <input type="text" name="lancamento" onChange={handleLancamento}/>
+                        <input type="text" name="lancamento" value={lancamento_album} onChange={handleLancamento}/>
                     </div>
                     <div>
                         <label htmlFor="capa">Capa</label>
-                        <input type="link" placeholder="Link da imagem" name="capa"  accept="image/png, image/jpeg"  onChange={handleCapa} />
+                        <input type="link" placeholder="Link da imagem" name="capa" value={capa_album}  accept="image/png, image/jpeg"  onChange={handleCapa} />
+                        {capa_album && <img className="imagem-previa-upload" src={capa_album}/>}
                     </div>
                     <div>
                         <label htmlFor="ouvintes">Ouvintes</label>
-                        <input type="text" name="ouvintes" onChange={handleOuvintes} />
+                        <input type="text" name="ouvintes" value={ouvintes_album} onChange={handleOuvintes} />
                     </div>
                     <div>
                         <input type="submit" value="Cadastrar"/>
