@@ -64,41 +64,41 @@ export default function CadastroAlbum(){
 
     return(
         <>
-            <a href="https://riffly-front.vercel.app">Inicio</a>
-            <h1 className="titulo">Tela Cadastro de Álbum</h1>
-            <form onSubmit={handleForm}>
-                <div>
-                    <label htmlFor="id">Id</label>
-                    <input type="text" name="id" onChange={handleId} />
-                </div>
-                <div>
-                    <label htmlFor="nome">Nome</label>
-                    <input type="text" name="nome" onChange={handleNome} />
-                </div>
-                <div>
-                    <label htmlFor="cantor">Cantor</label>
-                    <input type="text" name="cantor" onChange={handleCantor} />
-                </div>
-                <div>
-                    <label htmlFor="quant-music">Quantidade de Musica</label>
-                    <input type="text" name="quant-music" onChange={handleQntMsic} />
-                </div>
-                <div>
-                    <label htmlFor="lancamento">Lançamento</label>
-                    <input type="text" name="lancamento" onChange={handleLancamento}/>
-                </div>
-                <div>
-                    <label htmlFor="capa">Capa</label>
-                    <input type="link" placeholder="Link da imagem" name="capa"  accept="image/png, image/jpeg"  onChange={handleCapa} />
-                </div>
-                <div>
-                    <label htmlFor="ouvintes">Ouvintes</label>
-                    <input type="text" name="ouvintes" onChange={handleOuvintes} />
-                </div>
-                <div>
-                    <input type="submit" value="Cadastrar"/>
-                </div>
-            </form>
+                <a href="https://riffly-front.vercel.app">Inicio</a>
+                <h1 className="titulo">Tela Cadastro de Álbum</h1>
+                <form onSubmit={handleForm}>
+                    <div>
+                        <label htmlFor="id">Id</label>
+                        <input type="text" name="id" onChange={handleId} />
+                    </div>
+                    <div>
+                        <label htmlFor="nome">Nome</label>
+                        <input type="text" name="nome" onChange={handleNome} />
+                    </div>
+                    <div>
+                        <label htmlFor="cantor">Cantor</label>
+                        <input type="text" name="cantor" onChange={handleCantor} />
+                    </div>
+                    <div>
+                        <label htmlFor="quant-music">Quantidade de Musica</label>
+                        <input type="text" name="quant-music" onChange={handleQntMsic} />
+                    </div>
+                    <div>
+                        <label htmlFor="lancamento">Lançamento</label>
+                        <input type="text" name="lancamento" onChange={handleLancamento}/>
+                    </div>
+                    <div>
+                        <label htmlFor="capa">Capa</label>
+                        <input type="link" placeholder="Link da imagem" name="capa"  accept="image/png, image/jpeg"  onChange={handleCapa} />
+                    </div>
+                    <div>
+                        <label htmlFor="ouvintes">Ouvintes</label>
+                        <input type="text" name="ouvintes" onChange={handleOuvintes} />
+                    </div>
+                    <div>
+                        <input type="submit" value="Cadastrar"/>
+                    </div>
+                </form>
         </>
     )
 }
