@@ -1,7 +1,6 @@
 import { useEffect,useState } from "react";
 import './App.css'
-import { Link } from 'react-router-dom'
-
+import { Link } from "react-router-dom";
 type usuarios ={
   id: number,
   nome_usuario: string,
@@ -101,14 +100,12 @@ useEffect(()=>{
   return(
     <>
     <header className="cabecario">
-      <a href="http://localhost:5173/cadastro-musicas" className="b1">Nova Música</a>
-      <a href="http://localhost:5173/cadastro-album" className="b2">Novo Album</a>
-      <a href="http://localhost:5173/cadastro-comentarios" className="b3">Comente</a>
-      <a href="http://localhost:5173/cadastro-usuarios" className="b4">Cadastre-se</a>
+      <Link to="/cadastro-musicas" className="b1">Nova Música</Link>
+      <Link to="/cadastro-album" className="b2">Novo Album</Link>
+      <Link to="/cadastro-comentarios" className="b3">Comente</Link>
+      <Link to="/cadastro-usuarios" className="b4">Cadastre-se</Link>
     </header>
-
-    
-    <h1>Musicas</h1>
+    <h1>Músicas</h1>
     <div className="container-musicas">
        {musicas.map(mus=>{
       return(
@@ -134,7 +131,6 @@ useEffect(()=>{
         <div  key={alb.id} className='albuns'>
           <img src={alb.capa_album}/>
           <h1>{alb.nome_album}</h1>
-          <h3>{alb.cantor_album}</h3>
           <p>Musicas: {alb.quant_musicas_album}</p>
           <p>Ano: {alb.lancamento_album}</p>
           <p>Ouvintes: {alb.ouvintes_album}</p>
