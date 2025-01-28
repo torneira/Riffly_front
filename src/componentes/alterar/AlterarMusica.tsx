@@ -1,53 +1,60 @@
 import { useParams } from "react-router-dom";
 import { FormEvent, useState, ChangeEvent, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-function AlterarAlbum(){
+function AlterarMusica(){
     const {id} = useParams()
     useEffect(()=>{
-        fetch(`https://riffly-back.onrender.com/album/${id}`)
+        fetch(`https://riffly-back.onrender.com/musicas/${id}`)
         .then(resposta=>resposta.json())
         .then(dados=>{
-            setNome(dados.nome_album)
-            setCantor(dados.cantor_album)
-            setQuant(dados.quant_musicas_album)
-            setLancamento(dados.lancamento_album)
-            setCapa(dados.capa_album)
-            setOuvintes(dados.ouvintes_album)
+            setNome(dados.nome_musica)
+            setCantor(dados.cantor_musica)
+            setGenero(dados.genero_musica)
+            setLetra(dados.letra_musica)
+            setCapa(dados.capa_musica)
+            setLancamento(dados.lancamento_musica)
+            setOuvintes(dados.ouvintes_musica)
+        
         })
       },[])
-    const navigate = useNavigate();
-        const [nome_album,setNome] = useState("")
-        const [cantor_album,setCantor] = useState("")
-        const [quant_musicas_album,setQuant] = useState("")
-        const [lancamento_album,setLancamento] = useState("")
-        const [capa_album,setCapa] = useState("")
-        const [ouvintes_album,setOuvintes] = useState("")
+        const navigate = useNavigate();
+        const [nome_musica,setNome] = useState("")
+        const [cantor_musica,setCantor] = useState("")
+        const [genero_musica,setGenero] = useState("")
+        const [lancamento_musica,setLancamento] = useState("")
+        const [capa_musica,setCapa] = useState("")
+        const [ouvintes_musica,setOuvintes] = useState("")
+        const [letra_musica,setLetra] = useState("")
     
         function handleForm(event:FormEvent){
             event.preventDefault();
-            console.log("Tentei alterar album");
-            const album = {
+            console.log("Tentei alterar musica");
+
+            const musica = {
+
                 id: id,
-                nome_album: nome_album,
-                cantor_album: cantor_album,
-                quant_musicas_album: quant_musicas_album,
-                lancamento_album: lancamento_album,
-                capa_album : capa_album,
-                ouvintes_album: ouvintes_album
+                nome_musica: nome_musica,
+                cantor_musica: cantor_musica,
+                genero_musica: genero_musica,
+                lancamento_musica: lancamento_musica,
+                capa_musica : capa_musica,
+                ouvintes_musica: ouvintes_musica,
+                letra_musica : letra_musica
             }
-            fetch(`https://riffly-back.onrender.com/album/${id}`,{
+
+            fetch(`https://riffly-back.onrender.com/musicas/${id}`,{
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify(album)
+                body: JSON.stringify(musica)
             }).then(response => {
                 if(response.status === 200){
-                    alert("Album alterado com sucesso")
+                    alert("Musica alterada com sucesso")
                     navigate("/")
                 }
                 else{
-                    alert("Erro ao alterar produto")
+                    alert("Erro ao alterar Musica")
                 }
             })
         }
@@ -58,8 +65,8 @@ function AlterarAlbum(){
         function handleCantor(event:ChangeEvent<HTMLInputElement>){
             setCantor(event.target.value)
         }
-        function handleQuant(event:ChangeEvent<HTMLInputElement>){
-            setQuant(event.target.value)
+        function handleGenero(event:ChangeEvent<HTMLInputElement>){
+            setGenero(event.target.value)
         }
         function handleLancamento(event:ChangeEvent<HTMLInputElement>){
             setLancamento(event.target.value)
@@ -83,28 +90,28 @@ function AlterarAlbum(){
                     </div>
                     <div>
                         <label htmlFor="nome">Nome</label>
-                        <input type="text" name="nome" value={nome_album}onChange={handleNome} />
+                        <input type="text" name="nome" value={nome_musica}onChange={handleNome} />
                     </div>
                     <div>
                         <label htmlFor="cantor">Cantor</label>
-                        <input type="text" name="cantor" value={cantor_album} onChange={handleCantor} />
+                        <input type="text" name="cantor" value={cantor_musica} onChange={handleCantor} />
                     </div>
                     <div>
-                        <label htmlFor="quant-music">Quantidade de Musica</label>
-                        <input type="text" name="quant-music" value={quant_musicas_album} onChange={handleQuant} />
+                        <label htmlFor="quant-music">Genero Musica</label>
+                        <input type="text" name="quant-music" value={genero_musica} onChange={handleGenero} />
                     </div>
                     <div>
                         <label htmlFor="lancamento">Lançamento</label>
-                        <input type="text" name="lancamento" value={lancamento_album} onChange={handleLancamento}/>
+                        <input type="text" name="lancamento" value={lancamento_musica} onChange={handleLancamento}/>
                     </div>
                     <div>
                         <label htmlFor="capa">Capa</label>
-                        <input type="link" placeholder="Link da imagem" name="capa" value={capa_album}  accept="image/png, image/jpeg"  onChange={handleCapa} />
-                        {capa_album && <img className="imagem-previa-upload" src={capa_album}/>}
+                        <input type="link" placeholder="Link da imagem" name="capa" value={capa_musica}  accept="image/png, image/jpeg"  onChange={handleCapa} />
+                        {capa_musica && <img className="imagem-previa-upload" src={capa_musica}/>}
                     </div>
                     <div>
                         <label htmlFor="ouvintes">Ouvintes</label>
-                        <input type="text" name="ouvintes" value={ouvintes_album} onChange={handleOuvintes} />
+                        <input type="text" name="ouvintes" value={ouvintes_musica} onChange={handleOuvintes} />
                     </div>
                     <div>
                         <input type="submit" value="Cadastrar"/>
@@ -115,4 +122,4 @@ function AlterarAlbum(){
     )
 }
 
-export default AlterarAlbum;
+export default AlterarMusica;
