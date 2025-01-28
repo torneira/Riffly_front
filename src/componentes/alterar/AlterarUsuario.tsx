@@ -1,118 +1,94 @@
 import { useParams } from "react-router-dom";
 import { FormEvent, useState, ChangeEvent, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-function AlterarAlbum(){
+function AlterarUsuario(){
     const {id} = useParams()
     useEffect(()=>{
         fetch(`https://riffly-back.onrender.com/album/${id}`)
         .then(resposta=>resposta.json())
         .then(dados=>{
-            setNome(dados.nome_album)
-            setCantor(dados.cantor_album)
-            setQuant(dados.quant_musicas_album)
-            setLancamento(dados.lancamento_album)
-            setCapa(dados.capa_album)
-            setOuvintes(dados.ouvintes_album)
+            setNome(dados.nome_usuario)
+            setEmail(dados.email_usuario)
+            setSenha(dados.senha_usuario)
+            setFoto(dados.foto_usuario)
+
         })
       },[])
     const navigate = useNavigate();
-        const [nome_album,setNome] = useState("")
-        const [cantor_album,setCantor] = useState("")
-        const [quant_musicas_album,setQuant] = useState("")
-        const [lancamento_album,setLancamento] = useState("")
-        const [capa_album,setCapa] = useState("")
-        const [ouvintes_album,setOuvintes] = useState("")
-    
+        const [nome_usuario,setNome] = useState("")
+        const [email_usuario,setEmail] = useState("")
+        const [senha_usuario,setSenha] = useState("")
+        const [foto_usuario,setFoto] = useState("")
+
         function handleForm(event:FormEvent){
             event.preventDefault();
-            console.log("Tentei alterar album");
-            const album = {
+            console.log("Tentei alterar usuário");
+            const usuario = {
                 id: id,
-                nome_album: nome_album,
-                cantor_album: cantor_album,
-                quant_musicas_album: quant_musicas_album,
-                lancamento_album: lancamento_album,
-                capa_album : capa_album,
-                ouvintes_album: ouvintes_album
+                nome_usuario: nome_usuario,
+                email_usuario: email_usuario,
+                senha_usuario: senha_usuario,
+                foto_usuario: foto_usuario
             }
-            fetch(`https://riffly-back.onrender.com/album/${id}`,{
+            fetch(`https://riffly-back.onrender.com/usuario/${id}`,{
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify(album)
+                body: JSON.stringify(usuario)
             }).then(response => {
                 if(response.status === 200){
-                    alert("Album alterado com sucesso")
+                    alert("Usuário alterado com sucesso")
                     navigate("/")
                 }
                 else{
-                    alert("Erro ao alterar produto")
+                    alert("Erro ao alterar usuário")
                 }
             })
         }
-    
+
         function handleNome(event:ChangeEvent<HTMLInputElement>){
             setNome(event.target.value)
         }
-        function handleCantor(event:ChangeEvent<HTMLInputElement>){
-            setCantor(event.target.value)
+        function handleSenha(event:ChangeEvent<HTMLInputElement>){
+            setSenha(event.target.value)
         }
-        function handleQuant(event:ChangeEvent<HTMLInputElement>){
-            setQuant(event.target.value)
+        function handleEmail(event:ChangeEvent<HTMLInputElement>){
+            setEmail(event.target.value)
         }
-        function handleLancamento(event:ChangeEvent<HTMLInputElement>){
-            setLancamento(event.target.value)
-        }
-        function handleCapa(event:ChangeEvent<HTMLInputElement>){
-            setCapa(event.target.value)
-        }
-        function handleOuvintes(event:ChangeEvent<HTMLInputElement>){
-            setOuvintes(event.target.value)
+        function handleFoto(event:ChangeEvent<HTMLInputElement>){
+            setFoto(event.target.value)
         }
     
     return (
         <>
             <main>
                 <a href="https://riffly-front.vercel.app">Inicio</a>
-                <h1 className="titulo">Tela Cadastro de Álbum</h1>
+                <h1 className="titulo">Tela Alterar Usuário</h1>
                 <form onSubmit={handleForm}>
-                    <div>
-                        <label htmlFor="id">Id</label>
-                        <input type="text" name="id" value={id} readOnly />
-                    </div>
-                    <div>
-                        <label htmlFor="nome">Nome</label>
-                        <input type="text" name="nome" value={nome_album}onChange={handleNome} />
-                    </div>
-                    <div>
-                        <label htmlFor="cantor">Cantor</label>
-                        <input type="text" name="cantor" value={cantor_album} onChange={handleCantor} />
-                    </div>
-                    <div>
-                        <label htmlFor="quant-music">Quantidade de Musica</label>
-                        <input type="text" name="quant-music" value={quant_musicas_album} onChange={handleQuant} />
-                    </div>
-                    <div>
-                        <label htmlFor="lancamento">Lançamento</label>
-                        <input type="text" name="lancamento" value={lancamento_album} onChange={handleLancamento}/>
-                    </div>
-                    <div>
-                        <label htmlFor="capa">Capa</label>
-                        <input type="link" placeholder="Link da imagem" name="capa" value={capa_album}  accept="image/png, image/jpeg"  onChange={handleCapa} />
-                        {capa_album && <img className="imagem-previa-upload" src={capa_album}/>}
-                    </div>
-                    <div>
-                        <label htmlFor="ouvintes">Ouvintes</label>
-                        <input type="text" name="ouvintes" value={ouvintes_album} onChange={handleOuvintes} />
-                    </div>
-                    <div>
-                        <input type="submit" value="Cadastrar"/>
-                    </div>
-                </form>
+                <div>
+                    <label htmlFor="nome">Nome</label>
+                    <input type="text" name="nome" onChange={handleNome} />
+                </div>
+                <div>
+                    <label htmlFor="senha">Senha</label>
+                    <input type="password" name="senha" onChange={handleSenha} />
+                </div>
+                <div>
+                    <label htmlFor="email">Email</label>
+                    <input type="text" name="email" onChange={handleEmail} />
+                </div>
+                <div>
+                    <label htmlFor="foto">Foto</label>
+                    <input type="link" name="foto" placeholder="Link da foto"  accept="image/png, image/jpeg" onChange={handleFoto}/>
+                </div>
+                <div>
+                    <input type="submit" value="Alterar"/>
+                </div>
+            </form>
             </main>
         </>
     )
 }
 
-export default AlterarAlbum;
+export default AlterarUsuario;
