@@ -33,6 +33,8 @@ type comentarios ={
   comentarios:string
   }
   
+
+  //Usuarios
 function App() {
   const [musicas, setMusicas] = useState<musicas[]>([])
   const [usuarios, setUsuarios] = useState<usuarios[]>([])
@@ -43,14 +45,45 @@ function App() {
     .then(resposta=>resposta.json())
     .then(dados=>setUsuarios(dados))
   },[])
+  function handleExcluir(id:number){
+    fetch(`https://riffly-back.onrender.com/usuarios/${id}`,{
+      method:"DELETE"
+    })
+    .then(resposta=>{
+      if(resposta.status==200){
+        alert("Excluído com sucesso")
+        window.location.reload()
+      }
+      else{
+        alert("Erro ao excluir")
+      }
+    })
+  }
 
 
+  //Musicas
 useEffect(()=>{
   fetch("https://riffly-back.onrender.com/musicas")
   .then(response => response.json())
   .then(dados => setMusicas(dados))
 },[])
+function handleDeletar(id:number){
+  fetch(`https://riffly-back.onrender.com/musicas/${id}`,{
+    method:"DELETE"
+  })
+  .then(resposta=>{
+    if(resposta.status==200){
+      alert("Deletado com sucesso")
+      window.location.reload()
+    }
+    else{
+      alert("Erro ao excluir")
+    }
+  })
+}
 
+
+//Comentarios
 useEffect(()=>{
   fetch("https://riffly-back.onrender.com/comentarios")
   .then(response => response.json())
@@ -83,9 +116,13 @@ useEffect(()=>{
           <p>Genero: {mus.genero_musica}</p>
           <p>Ano: {mus.lancamento_musica}</p>
           <p>Ouvintes: {mus.ouvintes_musica}</p>
+          <button onClick={()=>{handleDeletar(mus.id)}}>Excluir</button>
+          <Link to={`/alterar-musica/${mus.id}`}>Alterar</Link>
         </div>
       )
     })}
+
+    
     </div>
     <h1>Álbuns</h1>
     <div className="container-albuns">
@@ -111,9 +148,15 @@ useEffect(()=>{
             <img src={usu.foto_usuario}/>
           </div>
           <h1>{usu.nome_usuario}</h1>
+          <button onClick={()=>{handleExcluir(usu.id)}}>Excluir</button>
+          <Link to={`/alterar-produto/${usu.id}`}>Alterar</Link>
         </div>
       )
     })}
+
+
+
+
     </div>
     <h1>Comentários</h1>
     <div className="container-comentario">

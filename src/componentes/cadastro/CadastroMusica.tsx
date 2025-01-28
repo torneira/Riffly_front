@@ -34,7 +34,7 @@ export default function CadastroMusica(){
             lancamento_musica: lancamento_musica,
             ouvintes_musica: ouvintes_musica
         }
-        fetch("https://riffly-back.onrender.com/musicas",{
+        fetch("https://riffly-back.onrender.com/musicas/",{
             method: "POST", // Método para enviar dados
             headers: {
                 "Content-Type": "application/json"
