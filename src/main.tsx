@@ -10,7 +10,7 @@ import CadastroUsuario from './componentes/cadastro/CadastroUsuario.tsx';
 import CadastroMusica from './componentes/cadastro/CadastroMusica.tsx';
 import CadastroAlbum from './componentes/cadastro/CadastroAlbum.tsx';
 import Comentarios from './componentes/cadastro/Comentarios.tsx';
-
+import AlterarUsuario from './componentes/alterar/AlterarUsuario.tsx';
 
 //Cria uma instância do BrowserRouter e passa um array de objetos com as rotas da aplicação
 const router = createBrowserRouter([
@@ -33,8 +33,13 @@ const router = createBrowserRouter([
   {
     path: "/cadastro-comentarios",
     element: <Comentarios/>,
-  }
+  },
+  {
+    path: "/alterar-usuario/:id",
+    element: <AlterarUsuario/>,
+  },
 ]);
+
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
