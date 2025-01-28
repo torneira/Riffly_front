@@ -11,6 +11,7 @@ import CadastroMusica from './componentes/cadastro/CadastroMusica.tsx';
 import CadastroAlbum from './componentes/cadastro/CadastroAlbum.tsx';
 import Comentarios from './componentes/cadastro/Comentarios.tsx';
 import AlterarUsuario from './componentes/alterar/AlterarUsuario.tsx';
+import AlterarMusica from './componentes/alterar/AlterarMusica.tsx';
 
 //Cria uma instância do BrowserRouter e passa um array de objetos com as rotas da aplicação
 const router = createBrowserRouter([
@@ -34,9 +35,15 @@ const router = createBrowserRouter([
     path: "/cadastro-comentarios",
     element: <Comentarios/>,
   },
+  
+  //Alterar Musica e Usuario
   {
     path: "/alterar-usuario/:id",
     element: <AlterarUsuario/>,
+  },
+  {
+    path: "/alterar-musicas/:id",
+    element: <AlterarMusica/>,
   },
 ]);
 
