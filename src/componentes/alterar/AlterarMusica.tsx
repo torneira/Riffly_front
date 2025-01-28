@@ -82,7 +82,7 @@ function AlterarMusica(){
         <>
             <main>
                 <a href="https://riffly-front.vercel.app">Inicio</a>
-                <h1 className="titulo">Tela Cadastro de Álbum</h1>
+                <h1 className="titulo">Tela Alterar Música</h1>
                 <form onSubmit={handleForm}>
                     <div>
                         <label htmlFor="id">Id</label>
