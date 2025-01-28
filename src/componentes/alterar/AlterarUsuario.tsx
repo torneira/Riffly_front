@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 function AlterarUsuario(){
     const {id} = useParams()
     useEffect(()=>{
-        fetch(`https://riffly-back.onrender.com/album/${id}`)
+        fetch(`https://riffly-back.onrender.com/usuario/${id}`)
         .then(resposta=>resposta.json())
         .then(dados=>{
             setNome(dados.nome_usuario)
