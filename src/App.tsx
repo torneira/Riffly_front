@@ -99,76 +99,78 @@ useEffect(()=>{
   },[])
   return(
     <>
-    <header className="cabecario">
-      <Link to="/cadastro-musicas" className="b1">Nova Música</Link>
-      <Link to="/cadastro-album" className="b2">Novo Album</Link>
-      <Link to="/cadastro-comentarios" className="b3">Comente</Link>
-      <Link to="/cadastro-usuarios" className="b4">Cadastre-se</Link>
-    </header>
-    <h1>Músicas</h1>
-    <div className="container-musicas">
-       {musicas.map(mus=>{
-      return(
-        <div  key={mus.id} className='musicas'>
-          <img className="imagem-musica" src={mus.capa_musica}/>
-          <h1>{mus.nome_musica}</h1>
-          <h3>{mus.cantor_musica}</h3>
-          <p>Genero: {mus.genero_musica}</p>
-          <p>Ano: {mus.lancamento_musica}</p>
-          <p>Ouvintes: {mus.ouvintes_musica}</p>
-          <button onClick={()=>{handleDeletar(mus.id)}}>Excluir</button>
-          <Link to={`/alterar-musica/${mus.id}`}>Alterar</Link>
-        </div>
-      )
-    })}
-
-    
-    </div>
-    <h1>Álbuns</h1>
-    <div className="container-albuns">
-       {album.map(alb=>{
-      return(
-        <div  key={alb.id} className='albuns'>
-          <img src={alb.capa_album}/>
-          <h1>{alb.nome_album}</h1>
-          <p>Musicas: {alb.quant_musicas_album}</p>
-          <p>Ano: {alb.lancamento_album}</p>
-          <p>Ouvintes: {alb.ouvintes_album}</p>
-         
-        </div>
-      )
-    })}
-    </div>
-    <h1>Usuários</h1>
-    <div className="container-usuario">
-       {usuarios.map(usu=>{
-      return(
-        <div  key={usu.id} className='usuarios'>
-          <div className="imagem-user">
-            <img src={usu.foto_usuario}/>
+      <header className="cabecario">
+        <Link to="/cadastro-musicas" className="b1">Nova Música</Link>
+        <Link to="/cadastro-album" className="b2">Novo Album</Link>
+        <Link to="/cadastro-comentarios" className="b3">Comente</Link>
+        <Link to="/cadastro-usuarios" className="b4">Cadastre-se</Link>
+      </header>
+      <h1>Músicas</h1>
+      <div className="container-musicas">
+        {musicas.map(mus=>{
+        return(
+          <div  key={mus.id} className='musicas'>
+            <img className="imagem-musica" src={mus.capa_musica}/>
+            <h1>{mus.nome_musica}</h1>
+            <h3>{mus.cantor_musica}</h3>
+            <p>Genero: {mus.genero_musica}</p>
+            <p>Ano: {mus.lancamento_musica}</p>
+            <p>Ouvintes: {mus.ouvintes_musica}</p>
+            <button onClick={()=>{handleDeletar(mus.id)}}>Excluir</button>
+            <Link to={`/alterar-musica/${mus.id}`}>Alterar</Link>
           </div>
-          <h1>{usu.nome_usuario}</h1>
-          <button onClick={()=>{handleExcluir(usu.id)}}>Excluir</button>
-          <Link to={`/alterar-produto/${usu.id}`}>Alterar</Link>
-        </div>
-      )
-    })}
+        )
+      })}
+
+      
+      </div>
+      <h1>Álbuns</h1>
+      <div className="container-albuns">
+        {album.map(alb=>{
+        return(
+          <div  key={alb.id} className='albuns'>
+            <img src={alb.capa_album}/>
+            <h1>{alb.nome_album}</h1>
+            <p>Musicas: {alb.quant_musicas_album}</p>
+            <p>Ano: {alb.lancamento_album}</p>
+            <p>Ouvintes: {alb.ouvintes_album}</p>
+          
+          </div>
+        )
+      })}
+      </div>
+      <h1>Usuários</h1>
+      <div className="container-usuario">
+        {usuarios.map(usu=>{
+        return(
+          <div  key={usu.id} className='usuarios'>
+            <div className="imagem-user">
+              <img src={usu.foto_usuario}/>
+            </div>
+            <h1>{usu.nome_usuario}</h1>
+            <section>
+              <button onClick={()=>{handleExcluir(usu.id)}}>Excluir</button>
+              <Link to={`/alterar-usuario/${usu.id}`}>Alterar</Link>
+            </section>
+          </div>
+        )
+      })}
 
 
 
 
-    </div>
-    <h1>Comentários</h1>
-    <div className="container-comentario">
-       {comentarios.map(com=>{
-      return(
-        <div  key={com.id} className='comentarios'>
-          <h2>{com.nome_usuario}</h2>
-          <p>{com.comentarios}</p>
-        </div>
-      )
-    })}
-    </div>
+      </div>
+      <h1>Comentários</h1>
+      <div className="container-comentario">
+        {comentarios.map(com=>{
+        return(
+          <div  key={com.id} className='comentarios'>
+            <h2>{com.nome_usuario}</h2>
+            <p>{com.comentarios}</p>
+          </div>
+        )
+      })}
+      </div>
 
     </>
     
