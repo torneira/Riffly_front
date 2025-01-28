@@ -149,7 +149,7 @@ useEffect(()=>{
           </div>
           <h1>{usu.nome_usuario}</h1>
           <button onClick={()=>{handleExcluir(usu.id)}}>Excluir</button>
-          <Link to={`/alterar-produto/${usu.id}`}>Alterar</Link>
+          <Link to={`/alterar-usuario/${usu.id}`}>Alterar</Link>
         </div>
       )
     })}
