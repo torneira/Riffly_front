@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 function AlterarMusica(){
     const {id} = useParams()
     useEffect(()=>{
-        fetch(`https://riffly-back.onrender.com/musicas/${id}`)
+        fetch(`http://localhost:8000/musicas/${id}`)
         .then(resposta=>resposta.json())
         .then(dados=>{
             setNome(dados.nome_musica)
@@ -42,7 +42,7 @@ function AlterarMusica(){
                 letra_musica : letra_musica
             }
 
-            fetch(`https://riffly-back.onrender.com/musicas/${id}`,{
+            fetch(`http://localhost:8000/musicas/${id}`,{
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
