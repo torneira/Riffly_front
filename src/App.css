@@ -237,3 +237,17 @@
   align-items: self-start;
   padding-left: 25px;
 }
+.botao-excluir{
+  margin-top: 20px;
+  background: red;
+}
+
+@media (max-width: 480px) {
+    form {
+        padding: 15px;
+    }
+
+    input[type="submit"] {
+        font-size: 14px;
+    }
+}

@@ -116,7 +116,7 @@ useEffect(()=>{
             <p>Genero: {mus.genero_musica}</p>
             <p>Ano: {mus.lancamento_musica}</p>
             <p>Ouvintes: {mus.ouvintes_musica}</p>
-            <button onClick={()=>{handleDeletar(mus.id)}}>Excluir</button>
+            <button onClick={()=>{handleDeletar(mus.id)}} className="botao-excluir" >Excluir</button>
             <Link to={`/alterar-musica/${mus.id}`}>Alterar</Link>
           </div>
         )
@@ -149,7 +149,7 @@ useEffect(()=>{
             </div>
             <h1>{usu.nome_usuario}</h1>
             <section>
-              <button onClick={()=>{handleExcluir(usu.id)}}>Excluir</button>
+              <button onClick={()=>{handleExcluir(usu.id)}} className="botao-excluir">Excluir</button>
               <Link to={`/alterar-usuario/${usu.id}`}>Alterar</Link>
             </section>
           </div>
