@@ -42,7 +42,7 @@ const router = createBrowserRouter([
     element: <AlterarUsuario/>,
   },
   {
-    path: "/alterar-musicas/:id",
+    path: "/alterar-musica/:id",
     element: <AlterarMusica/>,
   },
 ]);

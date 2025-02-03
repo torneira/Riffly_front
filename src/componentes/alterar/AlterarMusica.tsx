@@ -4,13 +4,12 @@ import { useNavigate } from "react-router-dom";
 function AlterarMusica(){
     const {id} = useParams()
     useEffect(()=>{
-        fetch(`http://localhost:8000/musicas/${id}`)
+        fetch(`https://riffly-back.onrender.com/musicas/${id}`)
         .then(resposta=>resposta.json())
         .then(dados=>{
             setNome(dados.nome_musica)
             setCantor(dados.cantor_musica)
             setGenero(dados.genero_musica)
-            setLetra(dados.letra_musica)
             setCapa(dados.capa_musica)
             setLancamento(dados.lancamento_musica)
             setOuvintes(dados.ouvintes_musica)
@@ -24,7 +23,6 @@ function AlterarMusica(){
         const [lancamento_musica,setLancamento] = useState("")
         const [capa_musica,setCapa] = useState("")
         const [ouvintes_musica,setOuvintes] = useState("")
-        const [letra_musica,setLetra] = useState("")
     
         function handleForm(event:FormEvent){
             event.preventDefault();
@@ -39,10 +37,9 @@ function AlterarMusica(){
                 lancamento_musica: lancamento_musica,
                 capa_musica : capa_musica,
                 ouvintes_musica: ouvintes_musica,
-                letra_musica : letra_musica
             }
 
-            fetch(`http://localhost:8000/musicas/${id}`,{
+            fetch(`https://riffly-back.onrender.com/musicas/${id}`,{
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
