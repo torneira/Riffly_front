@@ -238,8 +238,9 @@
   padding-left: 25px;
 }
 .botao-excluir{
+  color: #dfdfdf;
   margin-top: 20px;
-  background: red;
+  background: rgb(139, 12, 12);
 }
 
 @media (max-width: 480px) {
@@ -250,4 +251,9 @@
     input[type="submit"] {
         font-size: 14px;
     }
+}
+.botao-alterar{
+  color: #dfdfdf;
+  margin-top: 20px;
+  background: rgb(4, 77, 4);
 }
