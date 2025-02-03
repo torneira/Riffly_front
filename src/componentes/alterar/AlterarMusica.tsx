@@ -36,10 +36,10 @@ function AlterarMusica(){
                 genero_musica: genero_musica,
                 lancamento_musica: lancamento_musica,
                 capa_musica : capa_musica,
-                ouvintes_musica: ouvintes_musica,
+                ouvintes_musica: ouvintes_musica
             }
 
-            fetch(`https://riffly-back.onrender.com/musicas/${id}`,{
+            fetch(`https://localhost:8000/musicas/${id}`,{
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
