@@ -89,7 +89,6 @@ useEffect(()=>{
       <header className="cabecario">
         <Link to="/cadastro-musicas" className="b1">Nova Música</Link>
         <Link to="/cadastro-album" className="b2">Novo Album</Link>
-        <Link to="/cadastro-comentarios" className="b3">Comente</Link>
         <Link to="/cadastro-usuarios" className="b4">Cadastre-se</Link>
       </header>
       <h1>Músicas</h1>
