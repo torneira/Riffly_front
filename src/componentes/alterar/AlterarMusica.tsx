@@ -31,7 +31,6 @@ function AlterarMusica(){
 
             const musica = {
 
-                id: id,
                 nome_musica: nome_musica,
                 cantor_musica: cantor_musica,
                 genero_musica: genero_musica,

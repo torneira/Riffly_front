@@ -24,7 +24,6 @@ function AlterarUsuario(){
             event.preventDefault();
             console.log("Tentei alterar usuário");
             const usuario = {
-                id: id,
                 nome_usuario: nome_usuario,
                 email_usuario: email_usuario,
                 senha_usuario: senha_usuario,
