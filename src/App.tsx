@@ -27,19 +27,14 @@ type album ={
   capa_album: string,
   ouvintes_album: number
 }
-type comentarios ={
-  id:number,
-  nome_usuario: string,
-  comentarios:string
-  }
-  
+
 
   //Usuarios
 function App() {
   const [musicas, setMusicas] = useState<musicas[]>([])
   const [usuarios, setUsuarios] = useState<usuarios[]>([])
   const [album, setAlbum] = useState<album[]>([])
-  const [comentarios, setComentarios] = useState<comentarios[]>([])
+ 
   useEffect(()=>{
     fetch("https://riffly-back.onrender.com/usuarios")
     .then(resposta=>resposta.json())
@@ -81,14 +76,6 @@ function handleDeletar(id:number){
     }
   })
 }
-
-
-//Comentarios
-useEffect(()=>{
-  fetch("https://riffly-back.onrender.com/comentarios")
-  .then(response => response.json())
-  .then(dados => setComentarios(dados))
-},[])
 
 
 /*Listagem de album para um app de musica*/
