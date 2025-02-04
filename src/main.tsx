@@ -9,7 +9,6 @@ import {
 import CadastroUsuario from './componentes/cadastro/CadastroUsuario.tsx';
 import CadastroMusica from './componentes/cadastro/CadastroMusica.tsx';
 import CadastroAlbum from './componentes/cadastro/CadastroAlbum.tsx';
-import Comentarios from './componentes/cadastro/Comentarios.tsx';
 import AlterarUsuario from './componentes/alterar/AlterarUsuario.tsx';
 import AlterarMusica from './componentes/alterar/AlterarMusica.tsx';
 
@@ -30,10 +29,6 @@ const router = createBrowserRouter([
   {
     path: "/cadastro-album",
     element: <CadastroAlbum/>,
-  },
-  {
-    path: "/cadastro-comentarios",
-    element: <Comentarios/>,
   },
   
   //Alterar Musica e Usuario
