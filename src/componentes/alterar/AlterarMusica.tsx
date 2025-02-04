@@ -39,7 +39,7 @@ function AlterarMusica(){
                 ouvintes_musica: ouvintes_musica
             }
 
-            fetch(`https://localhost:8000/musicas/${id}`,{
+            fetch(`https://riffly-back.onrender.com/musicas/${id}`,{
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
@@ -79,7 +79,7 @@ function AlterarMusica(){
         <>
             <main>
                 <a href="https://riffly-front.vercel.app">Inicio</a>
-                <h1 className="titulo">Tela Alterar Música</h1>
+                <h1 className="titulo">Tela Alterar Música {id}</h1>
                 <form onSubmit={handleForm}>
                     <div>
                         <label htmlFor="id">Id</label>

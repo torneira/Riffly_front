@@ -5,15 +5,15 @@ export default function CadastroComentario(){
     const navigate = useNavigate();
     const [id,setId] = useState("")
     const [nome_usuario,setNome] = useState("")
-    const [comentarios,setComentarios] = useState("")
+    const [comentario,setComentarios] = useState("")
  
     function handleForm(event:FormEvent){
         event.preventDefault();
         console.log("Tentei cadastrar comentario");
-        const comentario = {
+        const comentarios = {
             id: id,
             nome_usuario: nome_usuario,
-            comentarios: comentarios,
+            comentario: comentario,
             
         }
         fetch("https://riffly-back.onrender.com/comentarios",{
@@ -21,7 +21,7 @@ export default function CadastroComentario(){
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(comentario)
+            body: JSON.stringify(comentarios)
         }).then(response => {
             if(response.status === 200){
                 alert("comentario feito com sucesso")
