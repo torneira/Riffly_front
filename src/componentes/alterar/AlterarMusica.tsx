@@ -7,6 +7,7 @@ function AlterarMusica(){
         fetch(`https://riffly-back.onrender.com/musicas/${id}`)
         .then(resposta=>resposta.json())
         .then(dados=>{
+
             setNome(dados.nome_musica)
             setCantor(dados.cantor_musica)
             setGenero(dados.genero_musica)
@@ -40,6 +41,7 @@ function AlterarMusica(){
             }
 
             fetch(`https://riffly-back.onrender.com/musicas/${id}`,{
+
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
