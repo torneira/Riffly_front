@@ -239,8 +239,7 @@
 }
 .botao-excluir{
   color: #dfdfdf;
-  margin-top: 20px;
-  background: rgb(139, 12, 12);
+  background: rgb(104, 6, 6);
 }
 
 @media (max-width: 480px) {
@@ -254,6 +253,5 @@
 }
 .botao-alterar{
   color: #dfdfdf;
-  margin-top: 20px;
-  background: rgb(4, 77, 4);
+  background: rgb(1, 66, 1);
 }
