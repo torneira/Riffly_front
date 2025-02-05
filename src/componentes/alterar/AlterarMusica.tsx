@@ -52,7 +52,8 @@ function AlterarMusica(){
                 },
                 body: JSON.stringify(musica)
             }).then(response => {
-                if(response.status === 200){
+                //Se o servidor retorna status 200, exibe um alerta de sucesso e redireciona para a página inicial.
+                if(response.status === 200){ 
                     alert("Musica alterada com sucesso")
                     navigate("/")
                 }
