@@ -1,8 +1,12 @@
 import { useParams } from "react-router-dom";
 import { FormEvent, useState, ChangeEvent, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
+//Obtém o id da música a partir da URL.
 function AlterarMusica(){
     const {id} = useParams()
+
+//Busca os dados da música ao carregar a página e os armazena nos estados.
     useEffect(()=>{
         fetch(`https://riffly-back.onrender.com/musicas/${id}`)
         .then(resposta=>resposta.json())
@@ -24,7 +28,8 @@ function AlterarMusica(){
         const [lancamento_musica,setLancamento] = useState("")
         const [capa_musica,setCapa] = useState("")
         const [ouvintes_musica,setOuvintes] = useState("")
-    
+
+        //Atualiza os dados da música quando o formulário é enviado.
         function handleForm(event:FormEvent){
             event.preventDefault();
             console.log("Tentei alterar musica");
